@@ -1,10 +1,27 @@
 $('form[action=quotes]').submit(function (ev) {
+
+    let serialize = function (data) {
+        let obj = {};
+
+        for (let [key, value] of data) {
+            if (obj[key] !== undefined) {
+                if (!Array.isArray(obj[key])) {
+                    obj[key] = [obj[key]];
+                }
+                obj[key].push(value);
+            } else {
+                obj[key] = value;
+            }
+        }
+        return obj;
+    }
+
+
         let error = false;
         ev.stopPropagation();
         ev.preventDefault();
         let form = this;
         let data = new FormData(form);
-        data.pathname = document.location.pathname;
         data = serialize(data);
         let attaches = $(form).find('input[name][type=file]');
         let reader = new FileReader();
@@ -34,6 +51,12 @@ $('form[action=quotes]').submit(function (ev) {
                 contentType: 'application/json',
                 // processData: false,
                 success: function (data) {
+                    let fb = $(form).parents('.fancybox-is-open').attr('id')
+                    if (fb>'') {
+                        $.fancybox.close({
+                            src: '#'+fb,
+                        });
+                    }
                     if (data.error == false) {
                         $.fancybox.open({
                             src: '#modal-3',
@@ -62,19 +85,3 @@ $('form[action=quotes]').submit(function (ev) {
 
         return false;
 });
-
-function serialize(data) {
-    let obj = {};
-
-    for (let [key, value] of data) {
-        if (obj[key] !== undefined) {
-            if (!Array.isArray(obj[key])) {
-                obj[key] = [obj[key]];
-            }
-            obj[key].push(value);
-        } else {
-            obj[key] = value;
-        }
-    }
-    return obj;
-}
