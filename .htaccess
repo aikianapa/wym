@@ -1,0 +1,32 @@
+DirectoryIndex index.php
+AddDefaultCharset UTF-8
+Options All -Indexes
+
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+<IfModule mod_headers.c>
+<FilesMatch ".(webp|gif|jpg|jpeg|png|ico|svg|js|css|pdf)$">
+  Header set Cache-Control "max-age=31536000"
+</FilesMatch>
+</IfModule>
+
+RewriteBase /
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^(.*)\.less$ index.php 
+RewriteRule ^(.*)\.scss$ index.php 
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$
+RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+RewriteRule ^database(.*)$ index.php [R=404,L]
+RewriteRule ^.git(.*)$ index.php [R=404,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,QSA]
+
