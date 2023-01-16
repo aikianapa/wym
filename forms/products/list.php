@@ -15,9 +15,9 @@
                         <input type="search" class="form-control" name="filter" placeholder="{{_lang.search}}" on-change="filter">
                     </div>
                     <div class="col-6">
-                        <select class="form-control" name="series" wb-select2 placeholder="Серия" on-change="filter">
+                        <select class="form-control" name="speed" wb-select2 placeholder="Скорость потока" on-change="filter">
                             <option value="*">Все</option>
-                            <wb-foreach wb="table=catalogs&item=series&from=tree.data&tpl=false">
+                            <wb-foreach wb="table=catalogs&item=speed&from=tree.data&tpl=false">
                                 <option value="{{id}}" wb-if="'{{active}}'=='on'">{{name}}</option>
                             </wb-foreach>
                         </select>

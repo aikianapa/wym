@@ -16,7 +16,7 @@
                 <span clsss="row">
                     <div class="col-3">
                     <input class="form-control" type="search" placeholder="Поиск..."
-                    data-ajax="{'target':'#{{_form}}List','filter_add':{'$or':[{ 'header': {'$like' : '$value'} }, { 'tags': {'$like' : '$value'} }  ]} }">
+                    data-ajax="{'target':'#{{_form}}List','filter_add':{ 'header': {'$like' : '$value'} } }">
                     </div>
                 </span>
             </div>
@@ -39,7 +39,7 @@
                             'bind':'cms.list.{{_form}}',
                             'sort':'date:d',
                             'size':'{{_sett.page_size}}',
-                            'filter': {'_site' : {'$in': [null,'{{_sett.site}}']}}
+                            'filter': {'null':''}
                 }">
                     <tr class="bg-transparent">
                         <td data-ajax="{'url':'/cms/ajax/form/news/edit/{{_id}}','html':'modals'}">

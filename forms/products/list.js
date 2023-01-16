@@ -50,14 +50,12 @@
                     if ($(this).attr('name') == 'filter') {
                         let val = $(this).val()
                         filter['$or'] = [
-                            { fullname: { '$like': val } },
-                            { email: { '$like': val } },
-                            { phone: { '$like': val } }
+                            { header: { '$like': val } }
                         ]
                     }
-                    if ($(this).attr('name') == 'role') {
-                        let role = $(this).val()
-                        role == '*' ? null : filter.role = role
+                    if ($(this).attr('name') == 'speed') {
+                        let speed = $(this).val()
+                        speed == '*' ? null : filter.speed = {'$like':speed}
                     }
                 })
 

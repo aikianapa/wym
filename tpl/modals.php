@@ -68,7 +68,7 @@
                     <input type="text" name="phone" placeholder="Телефон">
                 </div>
                 <div class="input-block">
-                    <input type="hidden" name="message" placeholder="Сообщение">
+                    <input type="hidden" name="message" placeholder="Сообщение" value="Перезвоните мне">
                 </div>
                 <div class="modal-bottom">
                     <button class="primary-btn" type="submit" :disabled="!approve">Отправить</button>
@@ -97,14 +97,18 @@
 <div style="display: none;" id="modal-3" class="modal modal-done">
     <div class="modal-block">
         <span class="modal-title">Спасибо!</span>
-        <p>Ваше сообщение успешно отправлено</p>
+        <div class="msg">
+            <p>Ваше сообщение успешно отправлено</p>
+        </div>
     </div>
 </div>
 
 <div style="display: none;" id="modal-8" class="modal modal-error">
     <div class="modal-block">
         <span class="modal-title">Ошибка!</span>
-        <p>Ваше сообщение не отправлено</p>
+        <div class="msg">
+            <p>Ваше сообщение не отправлено</p>
+        </div>
     </div>
 </div>
 
@@ -175,57 +179,113 @@
 <div style="display: none;" id="modal-6" class="modal">
     <div class="modal-wrap">
         <span class="modal-title">Авторизация</span>
-        <form action="">
+        <wb-var vid="{{wbNewId()}}" />
+        <form action="/api/v2/login" method="POST" vid="{{_var.vid}}" onsubmit="javascript:return false;">
             <wb-data>
                 <div class="input-block">
-                    <input type="text" name="text" placeholder="Логин">
+                    <input type="text" name="login" placeholder="Логин">
                 </div>
                 <div class="input-block">
-                    <input type="text" name="text" placeholder="Пароль">
+                    <input type="text" name="password" placeholder="Пароль">
                 </div>
                 <div class="modal-buttons">
-                    <button class="primary-btn">Войти</button>
-                    <a data-fancybox data-src="#modal-7" href="javascript:;" class="primary-btn primary-btn-gray">Зарегистрироваться</a>
+                    <button class="primary-btn" v-on:click="submit">Войти</button>
+                    <a data-fancybox data-src="#modal-7" v-on:click="close" class="primary-btn primary-btn-gray cursor-pointer">Зарегистрироваться</a>
                 </div>
             </wb-data>
         </form>
+        <script type="module">
+            import {
+                createApp
+            } from 'vue'
+            createApp({
+                data() {
+                    return {
+
+                    }
+                },
+                methods: {
+                    submit(ev) {
+                        ev.preventDefault()
+                        let form = $(ev.target).parents('form');
+                        let url = form.attr('action')
+                        let data = new URLSearchParams(new FormData(form[0]));
+                        let method = form.attr('method') ? form.attr('method').toUpperCase() : 'POST';
+                        fetch(url, {
+                                method: method,
+                                body: data
+                            })
+                            .then(function(response) {
+                                return response.json()
+                            }).then(function(data) {
+                                if (data.login == true && data.error == false) {
+                                    document.location.reload()
+                                } else {
+                                    $(form).find('input').addClass('input-error')
+                                    setTimeout(function() {
+                                        form.find('input').removeClass('input-error')
+                                    }, 1500)
+                                }
+                            });
+
+                    },
+                    close() {
+                        $.fancybox.close({
+                            src: '#modal-6'
+                        });
+                    }
+                }
+            }).mount("[vid={{_var.vid}}]")
+        </script>
     </div>
 </div>
 <div style="display: none;" id="modal-7" class="modal">
     <div class="modal-wrap">
         <span class="modal-title">Регистрация</span>
         <wb-var vid="{{wbNewId()}}" />
-        <form action="quotes" method="POST" vid="{{_var.vid}}">
+        <form action="reg" method="POST" vid="{{_var.vid}}">
             <wb-data>
                 <div class="input-block">
-                    <input type="text" name="text" placeholder="Имя">
+                    <input type="text" name="fullname" placeholder="Имя" required1>
                 </div>
                 <div class="input-block">
-                    <input type="text" name="text" placeholder="E-mail">
+                    <input type="text" name="email" placeholder="E-mail" required1>
                 </div>
                 <div class="input-block">
-                    <input type="text" name="text" placeholder="Должность">
+                    <input type="text" name="position" placeholder="Должность" requred1>
                 </div>
                 <div class="input-block">
-                    <input type="text" name="text" placeholder="Организация">
+                    <input type="text" name="org" placeholder="Организация" required1>
                 </div>
                 <div class="modal-btn">
-                    <button class="primary-btn">Зарегистрироваться</button>
+                    <button class="primary-btn" type="submit" :disabled="!approve">Зарегистрироваться</button>
                 </div>
                 <div class="checkboxs">
                     <div class="checkbox">
-                        <input type="checkbox" checked>
+                        <input type="checkbox" checked v-model="approve">
                         <i class="checkbox-ico"></i>
                         <p>Я согласен с политикой обработки персональных данных</p>
                     </div>
                     <div class="checkbox">
-                        <input type="checkbox" checked>
+                        <input type="checkbox" name="subscribe" checked>
                         <i class="checkbox-ico"></i>
                         <p>Я согласен подписаться на новостную рассылку</p>
                     </div>
                 </div>
             </wb-data>
         </form>
+        <script type="module">
+            import {
+                createApp
+            } from 'vue'
+            createApp({
+                data() {
+                    return {
+                        approve: true
+                    }
+                }
+            }).mount("[vid={{_var.vid}}]")
+        </script>
     </div>
 </div>
 

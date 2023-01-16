@@ -37,7 +37,7 @@ $('form[action=quotes]').submit(function (ev) {
         });
         setTimeout(function () {
             let flds = {};
-            $(form).find(':input[name][placeholder]').each(function(){
+            $(form).find('[name][placeholder]').each(function(){
                 let name = $(this).attr('name');
                 let phdr = $(this).attr('placeholder');
                 (name > '' && phdr > '') ? flds[name] = phdr : null;
@@ -58,12 +58,14 @@ $('form[action=quotes]').submit(function (ev) {
                         });
                     }
                     if (data.error == false) {
+                        $('#modal-3').find('.msg').html('<p>Ваше сообщение успешно отправлено.</p>')
                         $.fancybox.open({
                             src: '#modal-3',
                             type: 'inline'
                         });
                         $(form)[0].reset();
                     } else {
+                        $('#modal-8').find('.msg').html('<p>Ваше сообщение не отправлено. Попробуйте повторить чуть позже.</p>')
                         $.fancybox.open({
                             src: '#modal-8',
                             type: 'inline'
@@ -73,6 +75,7 @@ $('form[action=quotes]').submit(function (ev) {
                 },
                 error: function (data) {
                     if (error) {
+                        $('#modal-8').find('.msg').html('<p>Ваше сообщение не отправлено. Попробуйте повторить чуть позже.</p>')
                         $.fancybox.open({
                             src: '#modal-8',
                             type: 'inline'

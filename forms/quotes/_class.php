@@ -77,7 +77,7 @@ class quotesClass extends cmsFormsClass {
         }
 
         $item['_created'] = date('Y-m-d H:i:s');
-        //$item = $this->app->itemSave('quotes', $item, true);
+        $item = $this->app->itemSave('quotes', $item, true);
         $res = ($item) ? ['error'=>false,'item'=>$item] : ['error' => true, 'msg'=>'Сообщение не отправлено.'];
         return json_encode($res);
     }

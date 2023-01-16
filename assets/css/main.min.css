@@ -7824,3 +7824,12 @@ blockquote {
 .text-break {
     white-space: pre-wrap;
 }
+
+.input-error {
+    border-color: #ef703a!important;
+    transition-duration: 0.5s;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

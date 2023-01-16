@@ -58,6 +58,7 @@
     <script defer src="/engine/js/wbapp.js" wb-if='in_array("{{_route.name}}",["contacts"])'></script>
     <script defer src="/assets/js/scripts.min.js"></script>
     <script defer src="/forms/quotes/quotes.js"></script>
+    <script defer src="/forms/users/users.js"></script>
 </view>
 
 <edit header="Подвал сайта">
