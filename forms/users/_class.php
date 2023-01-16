@@ -51,7 +51,7 @@ class usersClass extends cmsFormsClass
 
     }
 
-    function reg() {
+    public function reg() {
         header("Content-type:application/json");
         $_POST = json_decode(file_get_contents('php://input'), true);
         if (!filter_var($this->app->vars('_post.email'), FILTER_VALIDATE_EMAIL)) {
