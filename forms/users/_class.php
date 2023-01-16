@@ -36,19 +36,18 @@ class usersClass extends cmsFormsClass
         $item['active'] = 'on';
         $item['password'] = wbPasswordMake($item['setpass']);
         $msg = $this->app->fromString('<html><div class="mail"></div></html>');
+        $msg->find('.mail')->prepend('<h3>Доступ к материалам сайта ' . $this->app->route->host . '</h3>');
+        $subj = $msg->find('.mail > h3')->text();
+        $msg->find('.mail')->prepend("
+            Добрый день!<br>
+            Вам открыт доступ к материалам сайта {$this->app->route->host}.<br>
+            Для авторизации, в качестве логина, используйте ваш адрес электронной почты {$item['email']} и пароль: {$item['setpass']}<br>
+            С наилучшими пожеланиями, Woo Young Mediacal
+        ");
+        $from = $this->app->vars('_sett.email').';'. 'Woo Young Mediacal';
+        $sent = $item['email'].';'.$item['fullname'];
+        $this->app->mail($from, $sent, $subj, $msg->html());
         unset($item['setpass']);
-            $msg->find('.mail')->prepend('<h3>Доступ к материалам сайта ' . $this->app->route->host . '</h3>');
-            $subj = $msg->find('.mail > h3')->text();
-            $msg->find('.mail')->prepend("
-                Добрый день!<br>
-                Вам открыт доступ к материалам сайта {$this->app->route->host}.<br>
-                Для авторизации, в качестве логина, используйте ваш адрес электронной почты {$item['email']} и пароль: {$item['password']}<br>
-                С наилучшими пожеланиями, Woo Young Mediacal
-            ");
-            $from = $this->app->vars('_sett.email').';'. 'Woo Young Mediacal';
-            $sent = $item['email'].';'.$item['fullname'];
-            $this->app->mail($from, $sent, $subj, $msg->html());
-
     }
 
     public function reg() {

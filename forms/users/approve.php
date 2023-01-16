@@ -19,7 +19,7 @@
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <h3 class="tx-center">{{fullname}}</h3>
-                                        <p class="tx-center tx-18">Активировать пользователя и выслать на электронную почту пароль для доступа</p>
+                                        <p class="tx-center tx-18">Открыть доступ пользователю и выслать на электронную почту пароль для доступа</p>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-1">
@@ -47,7 +47,15 @@
                 </div>
             </div>
             <div class="modal-footer pd-x-20 pd-b-20 pd-t-0 bd-t-0">
-                <wb-include wb="{'form':'common_formsave.php'}" />
+                <button type="button" class="cms btn-close btn btn-danger" data-dismiss="modal">
+                    <svg wb-module="myicons" class="mi mi-interface-essential-107 size-20" stroke="FFFFFF"></svg>&nbsp;
+                    Отмена
+                </button>
+                <button type="button" class="cms btn-save btn btn-primary" wb-save="{'table':'{{_form}}','item':'{{_id}}','form':'#{{_form}}EditForm','update':'cms.list.{{_form}}' }">
+                    <svg wb-module="myicons" class="mi mi-floppy-save size-20" stroke="FFFFFF"></svg>&nbsp;
+                    <span wb-if="'{{active}}'=='on'">Закрыть доступ</span>
+                    <span wb-if="'{{active}}'==''">Открыть доступ</span>
+                </button>
             </div>
         </div>
     </div>

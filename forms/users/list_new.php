@@ -26,21 +26,16 @@
                         <div class="wd-40p">{{.fullname}}<br><a href="mailto:{{.email}}" class="tx-11">{{.email}}</a></div>
                         <div class="wd-40p tx-11">{{.org}}</div>
                         <div class="text-right wd-20p">
-                            <div class="custom-control custom-switch d-inline">
-                                {{#if .active == "on"}}
-                                    <span class="cursor-pointer d-inline" on-click="switch">
-                                        <svg class="mi mi-power-turn-on-square.1" size="24" stroke="82C43C" wb-on wb-module="myicons"></svg>
-                                    </span>
-                                {{/if}}
-                                {{#if .active == ""}}
-                                    <span class="cursor-pointer d-inline" on-click="switch">
-                                        <svg class="mi mi-power-turn-on-square" size="24" stroke="FC5A5A" wb-on wb-module="myicons"></svg>
-                                    </span>
-                                {{/if}}
-                            </div>
-                            <a href="javascript:" data-ajax="{'url':'/cms/ajax/form/users/approve/{{.id}}','html':'modals'}" class="d-inline">
-                                <img src="/module/myicons/content-edit-pen.svg?size=24&stroke=323232">
-                            </a>
+                            {{#if .active == "on"}}
+                                <a href="javascript:" data-ajax="{'url':'/cms/ajax/form/users/approve/{{.id}}','html':'modals'}" class="d-inline">
+                                    <svg class="mi mi-power-turn-on-square.1" size="24" stroke="82C43C" wb-on wb-module="myicons"></svg>
+                                </a>
+                            {{/if}}
+                            {{#if .active == ""}}
+                                <a href="javascript:" data-ajax="{'url':'/cms/ajax/form/users/approve/{{.id}}','html':'modals'}" class="d-inline">
+                                    <svg class="mi mi-power-turn-on-square" size="24" stroke="FC5A5A" wb-on wb-module="myicons"></svg>
+                                </a>
+                            {{/if}}
                             <div class="dropdown dropright d-inline">
                                 <a class="cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <svg class="mi mi-trash-delete-bin.2 d-inline" size="24" stroke="dc3545" wb-on wb-module="myicons"></svg>
