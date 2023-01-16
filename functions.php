@@ -15,7 +15,7 @@
 
     function datetext($date)
     {
-        return strftime('%e %B %Y', strtotime($date));
+        return trim(strftime('%e %B %Y', strtotime($date)));
     }
 
 

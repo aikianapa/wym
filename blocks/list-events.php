@@ -4,7 +4,7 @@
             <div class="page-top">
                 <h1 class="page-title">Мероприятия</h1>
             </div>
-            <div class="article-content">
+            <div class="article-content" id="listEvents">
                 <wb-var vid="{{wbNewId()}}" />
                 <div class="article-block" vid="{{_var.vid}}" wb-off>
                     <div class="news-row">
