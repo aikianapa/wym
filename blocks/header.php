@@ -2,6 +2,8 @@
     <div class="header-bg"></div>
     <wb-var products wb-api="/api/v2/list/products?active=on&@sort=_sort@return=id,header,_form,directions,link" />
     <wb-var clist wb-api="/api/v2/list/pages?active=on&name=contacts&@return=blocks" />
+    <wb-var partners wb-api="/api/v2/list/pages?active=on&path=&name=partners&@return=blocks" />
+    <wb-var wherebuy wb-api="/api/v2/list/pages?active=on&path=&name=wherebuy&@return=blocks" />
     <wb-foreach wb="from=_var.clist.0.blocks&tpl=false">
         <wb-var contact_phone="{{phone}}" wb-if="'{{name}}'=='contacts'" />
         <wb-var contact_org="{{org}}" wb-if="'{{name}}'=='contacts'" />
