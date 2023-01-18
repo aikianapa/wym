@@ -61,4 +61,20 @@ function fileinfo($file)
     }
     return $list;
 }
+
+
+function pumpsFlds($num=1) {
+    $res = [];
+    $app = &$_ENV['app'];
+    $tpl = $app->getTpl('pumps-tab-'.$num.'.php');
+    if (!$tpl) return $res;
+    $list = $tpl->find('[data-md]');
+    foreach($list as $l) {
+        $res[] = [
+            'fld' => $l->attr('data-md'),
+            'img' => $l->children('img')->attr('src')
+        ];
+    }
+    return $res;
+}
 ?>
