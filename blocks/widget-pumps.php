@@ -88,7 +88,7 @@
                 <div class="divider-text">Отзыв</div>
                 <div class="row bg-light p-2 rounded-10 align-items-center">
                     <div class="col-sm-3">
-                        <input name="{{_var.id}}_avatar" wb="module=filepicker&mode=single&original=false&width=150&height=150" wb-path="/uploads/blocks/widget/pumps">
+                        <input name="{{_var.id}}_avatar" value="{{_var.item.{{_var.id}}_avatar}}" wb="module=filepicker&mode=single&original=false&width=150&height=150" wb-path="/uploads/blocks/widget/pumps">
                     </div>
                     <div class="col-sm-9">
                         <input class="form-control mb-2" type="text" name="{{_var.id}}_bq_title" value="{{_var.item.{{_var.id}}_bq_title}}" placeholder="Заголовок отзыва">
