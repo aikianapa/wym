@@ -246,16 +246,16 @@
         <form action="reg" method="POST" vid="{{_var.vid}}">
             <wb-data>
                 <div class="input-block">
-                    <input type="text" name="fullname" placeholder="Имя" required1>
+                    <input type="text" name="fullname" placeholder="Имя" required>
                 </div>
                 <div class="input-block">
-                    <input type="text" name="email" placeholder="E-mail" required1>
+                    <input type="text" name="email" placeholder="E-mail" required>
                 </div>
                 <div class="input-block">
                     <input type="text" name="position" placeholder="Должность" requred1>
                 </div>
                 <div class="input-block">
-                    <input type="text" name="org" placeholder="Организация" required1>
+                    <input type="text" name="org" placeholder="Организация" required>
                 </div>
                 <div class="modal-btn">
                     <button class="primary-btn" type="submit" :disabled="!approve">Зарегистрироваться</button>

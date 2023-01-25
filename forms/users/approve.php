@@ -19,6 +19,7 @@
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <h3 class="tx-center">{{fullname}}</h3>
+                                        <p>{{position}}</p>
                                         <p class="tx-center tx-18">Открыть доступ пользователю и выслать на электронную почту пароль для доступа</p>
                                     </div>
                                 </div>

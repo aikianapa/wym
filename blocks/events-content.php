@@ -15,7 +15,7 @@
                 <div class="event-row">
                     <div class="event-sidebar">
                         <div class="event-news">
-                            <wb-foreach wb="table=events&tpl=false&limit=1&sort=date:d" wb-filter="active=on">
+                            <wb-foreach wb="from=_var.lastevent" wb-filter="active=on">
                                 <a href="{{yongerFurl()}}" class="news-tag">Последнее {{_var.type}}</a>
                                 <span class="event-tit">{{header}}</span>
                                 <p>{{short}}</p>

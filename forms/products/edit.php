@@ -21,7 +21,7 @@
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <div class="divider-text my-0">Обложка</div>
-                                        <wb-module wb="module=filepicker&mode=single&width=600&&height=600" wb-path="/uploads/products/{{_var.id}}" name="cover">
+                                        <wb-module wb="module=filepicker&mode=single&width=300&&height=300" wb-path="/uploads/products/{{_var.id}}" name="cover">
                                         </wb-module>
                                     </div>
                                 </div>

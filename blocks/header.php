@@ -4,6 +4,10 @@
     <wb-var clist wb-api="/api/v2/list/pages?active=on&name=contacts&@return=blocks" />
     <wb-var partners wb-api="/api/v2/list/pages?active=on&path=&name=partners&@return=blocks" />
     <wb-var wherebuy wb-api="/api/v2/list/pages?active=on&path=&name=wherebuy&@return=blocks" />
+    <wb-var lastevent wb-api="/api/v2/list/events?@limit=1&@sort=date:d" />
+    <wb-var lastmater wb-api="/api/v2/list/materials?@limit=1&@sort=date:d" />
+    <wb-var speed wb-api="/api/v2/list/catalogs/speed/tree.data" />
+    <wb-var directions wb-api="/api/v2/list/catalogs/directions/tree.data" />
     <wb-foreach wb="from=_var.clist.0.blocks&tpl=false">
         <wb-var contact_phone="{{phone}}" wb-if="'{{name}}'=='contacts'" />
         <wb-var contact_org="{{org}}" wb-if="'{{name}}'=='contacts'" />
@@ -25,10 +29,10 @@
                     <a href="/"><img src="/assets/img/logo.svg" alt=""></a>
                 </div>
                 <ul class="header-social">
-                    <li><a href="#"><i class="hb-ico whatsapp-c-ico"></i></a></li>
-                    <li><a href="#"><i class="hb-ico telegram-c-ico"></i></a></li>
-                    <li><a href="#"><i class="hb-ico vk-c-ico"></i></a></li>
-                    <li><a href="#"><i class="hb-ico ok-c-ico"></i></a></li>
+                    <li><a href="{{_var.contact_whatsapp}}" target="_blank"><i class="hb-ico whatsapp-c-ico"></i></a></li>
+                    <li><a href="{{_var.contact_telegram}}" target="_blank"><i class="hb-ico telegram-c-ico"></i></a></li>
+                    <li><a href="{{_var.contact_vk}}" target="_blank"><i class="hb-ico vk-c-ico"></i></a></li>
+                    <li><a href="{{_var.contact_ok}}" target="_blank"><i class="hb-ico ok-c-ico"></i></a></li>
                 </ul>
                 <ul class="header-actions">
                     <li><a href="mailto:{{_var.contact_email}}"><span class="action-cr"><i class="hb-ico mail-ico"></i></span><span>{{_var.contact_email}}</span></a></li>
@@ -94,23 +98,26 @@
                     </div>
                 </div>
                 <div class="directory-main">
-                    <div class="materials-items">
-                        <a class="materials-items-img"><span class="materials-items-img-wrap" style="background-image: url(img/img-12.jpg);"></span></a>
-                        <div class="materials-item">
-                            <div class="materials-item-data">
-                                25<span>сентября</span>
+                    <wb-foreach wb="from=_var.lastmater&tpl=false">
+                        <div class="materials-items">
+                            <a class="materials-items-img"><span class="materials-items-img-wrap" style="background-image: url(/thumbc/676x320/src{{cover.0.img}});"></span></a>
+                            <div class="materials-item">
+                                <div class="materials-item-data">
+                                    <wb-var mdate='{{explode(" ",{{datetext({{date}})}})}}' />
+                                    {{_var.mdate.0}}<span>{{_var.mdate.1}}</span>
+                                </div>
+                                <span class="materials-item-name"><a href="#">{{header}}</a></span>
+                                <p><a href="{{link}}">{{descr}}</a></p>
                             </div>
-                            <span class="materials-item-name"><a href="#">Конференция «Безопасность фармакотерапии»</a></span>
-                            <p><a href="#">Цены на нашу продукцию делают её доступной для широкого круга потребителей.</a></p>
                         </div>
-                    </div>
+                    </wb-foreach>
                 </div>
             </div>
             <ul class="header-social">
-                <li><a href="{{_var.contact_whatsapp}}"><i class="hb-ico whatsapp-c-ico"></i></a></li>
-                <li><a href="{{_var.contact_telegram}}"><i class="hb-ico telegram-c-ico"></i></a></li>
-                <li><a href="{{_var.contact_vk}}"><i class="hb-ico vk-c-ico"></i></a></li>
-                <li><a href="{{_var.contact_ok}}"><i class="hb-ico ok-c-ico"></i></a></li>
+                <li><a href="{{_var.contact_whatsapp}}" target="_blank"><i class="hb-ico whatsapp-c-ico"></i></a></li>
+                <li><a href="{{_var.contact_telegram}}" target="_blank"><i class="hb-ico telegram-c-ico"></i></a></li>
+                <li><a href="{{_var.contact_vk}}" target="_blank"><i class="hb-ico vk-c-ico"></i></a></li>
+                <li><a href="{{_var.contact_ok}}" target="_blank"><i class="hb-ico ok-c-ico"></i></a></li>
             </ul>
         </div>
     </div>

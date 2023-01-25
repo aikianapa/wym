@@ -6,7 +6,7 @@ class productsClass extends cmsFormsClass {
         $data = $this->app->dot($item);
         isset($item['header'])  AND isset($item['header'][$_SESSION['lang']]) ? $item['header'] = $item['header'][$_SESSION['lang']] : null;
         isset($item['date']) ? $item['date'] = date('d.m.Y H:i',strtotime($item['date'])) : null;
-        $data->get('cover.0.img') > '' ? null : $data->set('cover.0.img', '/assets/img/placeholder.jpg');
+        $data->get('cover.0.img') > '' ? null : $data->set('cover.0.img', '/assets/img/product-1.png');
         $item['link'] = '/catalog/'.wbFurlGenerate($item['header']);
         $this->prevnext($item);
     }

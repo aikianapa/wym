@@ -12,3 +12,5 @@ forms/quotess
 .idea/*
 
 database/_mod_autoinc.json
+
+database/

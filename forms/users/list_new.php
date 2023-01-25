@@ -24,7 +24,7 @@
                 {{#each result}}
                     <li class="list-group-item d-flex align-items-center" data-id="{{.id}}">
                         <div class="wd-40p">{{.fullname}}<br><a href="mailto:{{.email}}" class="tx-11">{{.email}}</a></div>
-                        <div class="wd-40p tx-11">{{.org}}</div>
+                        <div class="wd-40p tx-11">{{.org}}<br>{{.position}}</div>
                         <div class="text-right wd-20p">
                             {{#if .active == "on"}}
                                 <a href="javascript:" data-ajax="{'url':'/cms/ajax/form/users/approve/{{.id}}','html':'modals'}" class="d-inline">

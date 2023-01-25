@@ -12,7 +12,7 @@
                     <ul>
                         <wb-foreach wb="from=_var.products&tpl=false" wb-filter="directions~={{id}}">
                             <li class="green-cr" _class="blue-cr green-cr">
-                                <a href="{{yongerFurl()}}">{{header}}</a>
+                                <a href="/catalog/{{wbFurlGenerate({{header}})}}">{{header}}</a>
                             </li>
                         </wb-foreach>
                     </ul>
@@ -139,4 +139,11 @@
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
     </div>
+    <div class="alert alert-info">
+        Виджет автоматически формируется на основе справочника медицинских направлений и каталога продукции.
+    </div>
+    <button class="btn btn-primary" type="button" data-ajax="{'url':'/cms/ajax/form/catalogs/edit/directions','html':'modals.editDirections'}">
+        Редактировать медицинские направления
+    </button>
+    <modals class="editDirections"></modals>
 </edit>
