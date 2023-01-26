@@ -1,4 +1,5 @@
 <?php
+
 use Nahid\JsonQ\Jsonq;
 
 class usersClass extends cmsFormsClass
@@ -28,11 +29,11 @@ class usersClass extends cmsFormsClass
     {
         if (isset($item['setpass'])) {
             $this->setpass($item);
-            
         }
     }
 
-    private function setpass(&$item) {
+    public function setpass(&$item)
+    {
         $item['active'] = 'on';
         $item['password'] = wbPasswordMake($item['setpass']);
         $msg = $this->app->fromString('<html><div class="mail"></div></html>');
@@ -44,19 +45,20 @@ class usersClass extends cmsFormsClass
             Для авторизации, в качестве логина, используйте ваш адрес электронной почты {$item['email']} и пароль: {$item['setpass']}<br>
             С наилучшими пожеланиями, Woo Young Mediacal
         ");
-        $from = $this->app->vars('_sett.email').';'. 'Woo Young Mediacal';
-        $sent = $item['email'].';'.$item['fullname'];
-        $this->app->mail($from, $sent, $subj, $msg->html());
+        $from = $this->app->vars('_sett.email') . ';' . 'Woo Young Mediacal';
+        $sent = $item['email'] . ';' . $item['fullname'];
+        $res = $this->app->mail($from, $sent, $subj, $msg->html());
         unset($item['setpass']);
     }
 
-    public function reg() {
+    public function reg()
+    {
         header("Content-type:application/json");
         $_POST = json_decode(file_get_contents('php://input'), true);
         if (!filter_var($this->app->vars('_post.email'), FILTER_VALIDATE_EMAIL)) {
-            return json_encode(['error'=>true,'msg'=>'Недопустимый адрес электронной почты']);
+            return json_encode(['error' => true, 'msg' => 'Недопустимый адрес электронной почты']);
         }
-        $user = array_pop($this->app->itemList('users',['filter'=>['email'=> $this->app->vars('_post.email')]])['list']);
+        $user = array_pop($this->app->itemList('users', ['filter' => ['email' => $this->app->vars('_post.email')]])['list']);
         if ($user) {
             return json_encode(['error' => true, 'msg' => 'Пользователь уже зарегистрирован']);
         }
@@ -70,10 +72,11 @@ class usersClass extends cmsFormsClass
             'active' => ''
         ];
 
-        $user = $this->app->itemSave('users',$user,true);
+        $user = $this->app->itemSave('users', $user, true);
         if (!$user) {
             return json_encode(['error' => true, 'msg' => 'Ошибка! Пользователь не зарегистрирован. Попробуйте повторить регистрацию чуть позже.']);
         }
         return json_encode(['error' => false, 'msg' => 'Пользователь успешно зарегистрирован. Активация учётной записи произойдёт после проверки нашими специалистами. Пароль доступа прийдёт на указанный адрес электронной почты.']);
     }
 }
+?>

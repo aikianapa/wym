@@ -52,7 +52,7 @@
                     <svg wb-module="myicons" class="mi mi-interface-essential-107 size-20" stroke="FFFFFF"></svg>&nbsp;
                     Отмена
                 </button>
-                <button type="button" class="cms btn-save btn btn-primary" wb-save="{'table':'{{_form}}','item':'{{_id}}','form':'#{{_form}}EditForm','update':'cms.list.{{_form}}' }">
+                <button type="button" class="cms btn-save btn btn-primary" wb-save="{'table':'{{_form}}','item':'{{_id}}','form':'#{{_form}}EditForm' }">
                     <svg wb-module="myicons" class="mi mi-floppy-save size-20" stroke="FFFFFF"></svg>&nbsp;
                     <span wb-if="'{{active}}'=='on'">Закрыть доступ</span>
                     <span wb-if="'{{active}}'==''">Открыть доступ</span>
