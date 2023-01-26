@@ -9,6 +9,7 @@
     <meta name="theme-color" content="#000">
     <meta name="msapplication-navbutton-color" content="#000">
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <meta name="yandex-verification" content="a80c0c9292d965e7" />
     <script type="importmap">
         {"imports": {"vue": "/assets/js/vue.esm.js"}}
     </script>
