@@ -8,7 +8,7 @@
             <div class="page-contact-info">
                 <h2 class="page-contact-title">{{_var.title}}</h2>
                 <p>{{_var.text}}</p>
-                <a data-fancybox data-src="#modal-4" href="javascript:;" class="primary-btn">Написать сообщение</a>
+                <a data-fancybox data-src="#modal-4" href="#modal-4" class="primary-btn">Написать сообщение</a>
             </div>
             <div class="page-contact-img"><img src="{{_var.img}}" alt=""></div>
         </div>

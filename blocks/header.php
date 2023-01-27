@@ -15,12 +15,12 @@
         <wb-var contact_email="{{email}}" wb-if="'{{name}}'=='contacts'" />
         <wb-var contact_address="{{address}}" wb-if="'{{name}}'=='contacts'" />
         <wb-var contact_worktime="{{worktime}}" wb-if="'{{name}}'=='contacts'" />
-        <wb-var contact_whatsapp="{{whatsapp}}" wb-if="'{{name}}'=='whatsapp'" />
-        <wb-var contact_telegram="{{telegram}}" wb-if="'{{name}}'=='telegram'" />
-        <wb-var contact_vk="{{vk}}" wb-if="'{{name}}'=='vk'" />
-        <wb-var contact_ok="{{ok}}" wb-if="'{{name}}'=='ok'" />
+        <wb-var contact_whatsapp="{{whatsapp}}" wb-if="'{{name}}'=='contacts'" />
+        <wb-var contact_telegram="{{telegram}}" wb-if="'{{name}}'=='contacts'" />
+        <wb-var contact_vk="{{vk}}" wb-if="'{{name}}'=='contacts'" />
+        <wb-var contact_ok="{{ok}}" wb-if="'{{name}}'=='contacts'" />
     </wb-foreach>
-    <wb-var clist='' />
+
     <header class="header">
         <div class="wrapper">
             <div class="header-top">
@@ -73,7 +73,7 @@
             <div class="directory-all">
                 <div class="directory-row">
                     <div class="directory-col">
-                        <span class="directory-tit">Каталог продуктов</span>
+                        <a href="/catalog" class="directory-tit">Каталог продуктов</a>
                         <ul>
                             <wb-foreach wb="from=_var.products&tpl=false">
                                 <li><a href="{{link}}">{{header}}</a></li>
@@ -81,13 +81,13 @@
                         </ul>
                     </div>
                     <div class="directory-col">
-                        <span class="directory-tit">Медицинские направления</span>
+                        <a href="/directions" class="directory-tit">Медицинские направления</a>
                         <ul wb-tree="item=directions&children=false">
-                            <li><a href="/direction/{{id}}">{{name}}</a></li>
+                            <li wb-if="'{{active}}'=='on'"><a href="/direction/{{id}}">{{name}}</a></li>
                         </ul>
                     </div>
                     <div class="directory-col">
-                        <span class="directory-tit">Информация</span>
+                        <a href="/news" class="directory-tit">Информация</a>
                         <ul>
                             <wb-foreach wb="from=_var.menu&tpl=false">
                                 <li wb-if="!in_array('{{name}}',['catalog','directions'])">

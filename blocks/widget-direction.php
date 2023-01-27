@@ -21,7 +21,7 @@
             <div class="direction-main"><img src="/assets/img/Illustation.png" alt=""></div>
             <div class="direction-items">
                 <wb-foreach wb="table=catalogs&item=directions&from=tree.data&tpl=false">
-                    <div class="direction-item direction-item-{{_ndx}}">
+                    <div class="direction-item direction-item-{{_ndx}}" wb-if="'{{active}}'=='on'">
                         <div class="direction-item-imgs" data-direction="direction-{{_ndx}}">
                             <div class="direction-item-img-1"><img src="/assets/img/Building_1/img-1.png" alt=""></div>
                             <div class="direction-item-img-2"><img src="/assets/img/Building_1/img-2.png" alt=""></div>
@@ -34,97 +34,21 @@
             <div class="direction-mob">
                 <div class="direction-slider slider swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="direction-slide swiper-slide">
-                            <span class="direction-slide-tit">Анестезиология и реаниматология</span>
-                            <div class="direction-slide-img">
-                                <div class="direction-item-imgs direction-item-imgs-1">
-                                    <div class="direction-item-img-1"><img src="/assets/img/Building_1/img-1.png" alt=""></div>
-                                    <div class="direction-item-img-2"><img src="/assets/img/Building_1/img-2.png" alt=""></div>
-                                    <div class="direction-item-img-3"><img src="/assets/img/Building_1/img-3.png" alt=""></div>
+                        <wb-foreach wb="table=catalogs&item=directions&from=tree.data&tpl=false">
+                            <div class="direction-slide swiper-slide" wb-if="'{{active}}'=='on'">
+                                <span class="direction-slide-tit">{{name}}</span>
+                                <div class="direction-slide-img">
+                                    <div class="direction-item-imgs direction-item-imgs-1">
+                                        <div class="direction-item-img-1"><img src="/assets/img/Building_1/img-1.png" alt=""></div>
+                                        <div class="direction-item-img-2"><img src="/assets/img/Building_1/img-2.png" alt=""></div>
+                                        <div class="direction-item-img-3"><img src="/assets/img/Building_1/img-3.png" alt=""></div>
+                                    </div>
+                                </div>
+                                <div class="direction-slide-btn">
+                                    <a href="/direction/{{id}}" class="more-btn" data-direction="direction-1">Подробнее</a>
                                 </div>
                             </div>
-                            <div class="direction-slide-btn">
-                                <a href="#" class="more-btn" data-direction="direction-1">Подробнее</a>
-                            </div>
-                        </div><!-- slide -->
-                        <div class="direction-slide swiper-slide">
-                            <span class="direction-slide-tit">Анестезиология и реаниматология</span>
-                            <div class="direction-slide-img">
-                                <div class="direction-item-imgs direction-item-imgs-2">
-                                    <div class="direction-item-img-1"><img src="/assets/img/Building_2/img-1.png" alt=""></div>
-                                    <div class="direction-item-img-2"><img src="/assets/img/Building_2/img-2.png" alt=""></div>
-                                    <div class="direction-item-img-3"><img src="/assets/img/Building_2/img-3.png" alt=""></div>
-                                </div>
-                            </div>
-                            <div class="direction-slide-btn">
-                                <a href="#" class="more-btn" data-direction="direction-1">Подробнее</a>
-                            </div>
-                        </div><!-- slide -->
-                        <div class="direction-slide swiper-slide">
-                            <span class="direction-slide-tit">Анестезиология и реаниматология</span>
-                            <div class="direction-slide-img">
-                                <div class="direction-item-imgs direction-item-imgs-3">
-                                    <div class="direction-item-img-1"><img src="/assets/img/Building_3/img-1.png" alt=""></div>
-                                    <div class="direction-item-img-2"><img src="/assets/img/Building_3/img-2.png" alt=""></div>
-                                    <div class="direction-item-img-3"><img src="/assets/img/Building_3/img-3.png" alt=""></div>
-                                </div>
-                            </div>
-                            <div class="direction-slide-btn">
-                                <a href="#" class="more-btn" data-direction="direction-1">Подробнее</a>
-                            </div>
-                        </div><!-- slide -->
-                        <div class="direction-slide swiper-slide">
-                            <span class="direction-slide-tit">Анестезиология и реаниматология</span>
-                            <div class="direction-slide-img">
-                                <div class="direction-item-imgs direction-item-imgs-4">
-                                    <div class="direction-item-img-1"><img src="/assets/img/Building_4/img-1.png" alt=""></div>
-                                    <div class="direction-item-img-2"><img src="/assets/img/Building_4/img-2.png" alt=""></div>
-                                    <div class="direction-item-img-3"><img src="/assets/img/Building_4/img-3.png" alt=""></div>
-                                </div>
-                            </div>
-                            <div class="direction-slide-btn">
-                                <a href="#" class="more-btn" data-direction="direction-1">Подробнее</a>
-                            </div>
-                        </div><!-- slide -->
-                        <div class="direction-slide swiper-slide">
-                            <span class="direction-slide-tit">Анестезиология и реаниматология</span>
-                            <div class="direction-slide-img">
-                                <div class="direction-item-imgs direction-item-imgs-5">
-                                    <div class="direction-item-img-1"><img src="/assets/img/Building_5/img-1.png" alt=""></div>
-                                    <div class="direction-item-img-2"><img src="/assets/img/Building_5/img-2.png" alt=""></div>
-                                    <div class="direction-item-img-3"><img src="/assets/img/Building_5/img-3.png" alt=""></div>
-                                </div>
-                            </div>
-                            <div class="direction-slide-btn">
-                                <a href="#" class="more-btn" data-direction="direction-1">Подробнее</a>
-                            </div>
-                        </div><!-- slide -->
-                        <div class="direction-slide swiper-slide">
-                            <span class="direction-slide-tit">Анестезиология и реаниматология</span>
-                            <div class="direction-slide-img">
-                                <div class="direction-item-imgs direction-item-imgs-6">
-                                    <div class="direction-item-img-1"><img src="/assets/img/Building_6/img-1.png" alt=""></div>
-                                    <div class="direction-item-img-2"><img src="/assets/img/Building_6/img-2.png" alt=""></div>
-                                    <div class="direction-item-img-3"><img src="/assets/img/Building_6/img-3.png" alt=""></div>
-                                </div>
-                            </div>
-                            <div class="direction-slide-btn">
-                                <a href="#" class="more-btn" data-direction="direction-1">Подробнее</a>
-                            </div>
-                        </div><!-- slide -->
-                        <div class="direction-slide swiper-slide">
-                            <span class="direction-slide-tit">Анестезиология и реаниматология</span>
-                            <div class="direction-slide-img">
-                                <div class="direction-item-imgs direction-item-imgs-7">
-                                    <div class="direction-item-img-1"><img src="/assets/img/Building_7/img-1.png" alt=""></div>
-                                    <div class="direction-item-img-2"><img src="/assets/img/Building_7/img-2.png" alt=""></div>
-                                    <div class="direction-item-img-3"><img src="/assets/img/Building_7/img-3.png" alt=""></div>
-                                </div>
-                            </div>
-                            <div class="direction-slide-btn">
-                                <a href="#" class="more-btn" data-direction="direction-1">Подробнее</a>
-                            </div>
-                        </div><!-- slide -->
+                        </wb-foreach>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
