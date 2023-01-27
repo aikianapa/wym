@@ -26,7 +26,7 @@
             <script type="module">
                 import {
                     createApp
-                } from 'vue'
+                } from '/assets/js/vue.esm.js'
                 createApp({
                     data() {
                         return {

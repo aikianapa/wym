@@ -11,6 +11,3 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
     <meta name="yandex-verification" content="a80c0c9292d965e7" />
     <wb-meta/>
-    <script type="importmap">
-        {"imports": {"vue": "/assets/js/vue.esm.js"}}
-    </script>
