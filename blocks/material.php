@@ -25,7 +25,8 @@
                     <div class="swiper-button-next"></div>
                 </div>
 
-                <a data-fancybox="" wb-if="'{{_parent.materials}}' == 'video'" href="{{video}}" class="link-youtube event-img" style="background-image: url({{video_cover.0.img}});"></a>
+                <a data-fancybox="" wb-if="'{{_parent.materials}}' == 'video' && '{{_sess.user.role}}'>''" href="{{video}}" class="link-youtube event-img" style="background-image: url({{video_cover.0.img}});"></a>
+                <a data-fancybox="" wb-if="'{{_parent.materials}}' == 'video' && '{{_sess.user.role}}'==''" data-src="#modal-6" href=" #" class="link-youtube event-img" style="background-image: url({{video_cover.0.img}});"></a>
 
                 <div class="event-row">
                     <div class="event-sidebar">
