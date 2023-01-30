@@ -18,7 +18,7 @@
                 <div class="contacts-main">
                     <div class="contacts-map">
                         <div class="map" id="map">
-                            <div wb-module="yamap" zoom="{{yamap.0.zoom}}" height="343" style="height:343px;">
+                            <div wb-module="yamap" zoom="{{yamap.0.zoom}}" scroll="false" height="343" style="height:343px;">
                                 <wb-foreach wb="from=yamap">
                                     <geopos value="{{geopos}}" title="{{address}}"></geopos>
                                 </wb-foreach>
