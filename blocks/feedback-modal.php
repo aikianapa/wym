@@ -8,15 +8,7 @@
             <div class="page-contact-info">
                 <h2 class="page-contact-title">{{_var.title}}</h2>
                 <p>{{_var.text}}</p>
-                <a href="#modal-4" class="primary-btn">Написать сообщение</a>
-                <script type="wbapp">
-                    $('a[href="#modal-4"]').click(function() {
-                        $.fancybox.open({
-                            src: '#modal-4',
-                            type: 'inline'
-                        });
-                    });
-                </script>
+                <a fancyfix href="#modal-4" class="primary-btn">Написать сообщение</a>
             </div>
             <div class="page-contact-img"><img src="{{_var.img}}" alt=""></div>
         </div>

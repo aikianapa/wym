@@ -29,8 +29,8 @@
                         <p>{{_var.contact_worktime}}</p>
                     </div>
                     <div class="footer-buttons">
-                        <a data-fancybox data-src="#modal-1" href="javascript:;" class="primary-btn">Задать вопрос</a>
-                        <a data-fancybox data-src="#modal-2" href="javascript:;" class="border-btn border-btn-white">Перезвоните мне</a>
+                        <a fancyfix href="#modal-1" class="primary-btn">Задать вопрос</a>
+                        <a fancyfix href="#modal-2" class="border-btn border-btn-white">Перезвоните мне</a>
                     </div>
                 </div>
             </div>
