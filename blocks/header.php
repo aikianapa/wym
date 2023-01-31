@@ -21,7 +21,7 @@
         <wb-var contact_ok="{{ok}}" wb-if="'{{name}}'=='contacts'" />
     </wb-foreach>
 
-    <header class="header">
+    <header  class="header">
         <div class="wrapper">
             <div class="header-top">
                 <i class="header-bar"></i>
