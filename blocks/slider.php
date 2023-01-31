@@ -11,7 +11,8 @@
                                 <div class="main-info">
                                     <h2 class="main-title">{{title}}</h2>
                                     <p>{{text}}</p>
-                                    <a data-fancybox data-src="#modal-1" href="{{link}}" class="primary-btn">{{_var.button}}</a>
+                                    <a wb-if="'{{link}}'==''" fancyfix href="#modal-1" class="primary-btn">{{_var.button}}</a>
+                                    <a wb-if="'{{link}}'> ''" href="{{link}}" class="primary-btn">{{_var.button}}</a>
                                 </div>
                             </div>
                         </div>
@@ -32,10 +33,10 @@
             <input name="image" wb="module=filepicker&mode=single&width=400&height=200" wb-path="/uploads/blocks/slider">
         </div>
         <div class="col-sm-8">
-            <div class="form-group mb-1">
+            <div class="mb-1 form-group">
                 <textarea name="title" class="form-control tx-bold" rows="auto" placeholder="Заголовок"></textarea>
             </div>
-            <div class="form-group mb-1">
+            <div class="mb-1 form-group">
                 <textarea name="text" class="form-control" rows="auto" placeholder="Текст"></textarea>
             </div>
             <div class="row">
@@ -43,7 +44,7 @@
                     <input class="form-control tx-bold" type="text" name="button" placeholder="Подробнее">
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" name="link" placeholder="Ссылка">
+                    <input class="form-control" type="text" wb="module=yonger&mode=pageselect" name="link" placeholder="Ссылка">
                 </div>
             </div>
         </div>
