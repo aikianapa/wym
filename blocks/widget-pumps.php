@@ -38,13 +38,19 @@
                                     </div>
                                     <a href="/directions" class="primary-btn">Медицинские направления</a>
                                 </div>
-                                <blockquote>
-                                    <div class="blockquote-top">
-                                        <div class="blockquote-user"><img src="/thumbc/60x60/src{{_var.item.{{_var.id}}_avatar.0.img}}" alt=""></div>
-                                        <span class="blockquote-name">{{_var.item.{{_var.id}}_bq_title}}</span>
+                                <div class="swiper feedback">
+                                    <div class="swiper-wrapper">
+                                        <wb-foreach wb="from=_var.item.{{_var.id}}_feedback&tpl=false">
+                                            <blockquote class="swiper-slide">
+                                                <div class="blockquote-top">
+                                                    <div class="blockquote-user"><img src="/thumbc/60x60/src{{avatar.0.img}}" alt=""></div>
+                                                    <span class="blockquote-name">{{bq_title}}</span>
+                                                </div>
+                                                <p class="text-break">{{bq_text}}</p>
+                                            </blockquote>
+                                        </wb-foreach>
                                     </div>
-                                    <p class="text-break">{{_var.item.{{_var.id}}_bq_text}}</p>
-                                </blockquote>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -85,28 +91,28 @@
                         <textarea class="form-control" rows="auto" name="{{_var.id}}_text" value="{{_var.item.{{_var.id}}_text}}"></textarea>
                     </div>
                 </div>
-                <div class="divider-text">Отзыв</div>
-                <div class="row bg-light p-2 rounded-10 align-items-center">
+                <div class="divider-text">Отзывы</div>
+                <wb-multiinput name="{{_var.id}}_feedback" class="p-2 bg-light rounded-10 align-items-center" value="{{_var.item.{{_var.id}}_feedback}}">
                     <div class="col-sm-3">
-                        <input name="{{_var.id}}_avatar" value="{{_var.item.{{_var.id}}_avatar}}" wb="module=filepicker&mode=single&original=false&width=150&height=150" wb-path="/uploads/blocks/widget/pumps">
+                        <input name="avatar" wb="module=filepicker&mode=single&original=false&width=150&height=150" wb-path="/uploads/blocks/widget/pumps">
                     </div>
                     <div class="col-sm-9">
-                        <input class="form-control mb-2" type="text" name="{{_var.id}}_bq_title" value="{{_var.item.{{_var.id}}_bq_title}}" placeholder="Заголовок отзыва">
-                        <textarea class="form-control" rows="auto" name="{{_var.id}}_bq_text" value="{{_var.item.{{_var.id}}_bq_text}}" placeholder="Текст отзыва"></textarea>
+                        <input class="mb-2 form-control" type="text" name="bq_title" placeholder="Заголовок отзыва">
+                        <textarea class="form-control" rows="auto" name="bq_text" placeholder="Текст отзыва"></textarea>
                     </div>
-                </div>
+                </wb-multiinput>
                 <div class="divider-text">Всплывающие окна</div>
                 <wb-var flds="{{pumpsFlds({{_ndx}})}}" />
                 <wb-foreach wb="from=_var.flds&tpl=false">
-                    <div class="form-group row mb-1">
+                    <div class="mb-1 form-group row">
                         <label class="col-sm-2 tx-center">
                             <img src="/thumb/100x100/src{{img}}" class="img-fluid" />
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control mb-2" type="text" name="{{_var.id}}_{{fld}}_title" value="{{_var.item.{{_var.id}}_{{fld}}_title}}" placeholder="Заголовок окна">
+                            <input class="mb-2 form-control" type="text" name="{{_var.id}}_{{fld}}_title" value="{{_var.item.{{_var.id}}_{{fld}}_title}}" placeholder="Заголовок окна">
                             <textarea class="form-control" rows="auto" name="{{_var.id}}_{{fld}}_text" value="{{_var.item.{{_var.id}}_{{fld}}_text}}" placeholder="Текст окна"></textarea>
                         </div>
-                        <hr class="col-12 my-1 py-0">
+                        <hr class="py-0 my-1 col-12">
                     </div>
                 </wb-foreach>
             </div>

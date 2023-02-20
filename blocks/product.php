@@ -19,11 +19,18 @@
                                     <span>Скачать PDF-каталог</span>({{_var.info.size}})
                                 </a>
                             </div>
+                            <div class="card-link" wb-if="'{{file1.0.img}}'>''">
+                                <a href="{{file1.0.img}}" download="{{_parent.header}}.pdf">
+                                    <img src="/assets/img/icons/pdf.svg" alt="">
+                                    <wb-var info="{{fileinfo({{file1.0.img}})}}" />
+                                    <span>Скачать инструкцию</span>({{_var.info.size}})
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="card-bottom">
                         <div class="card-content">
-                            <span class="card-sub">Описание</span>
+                            <span class="card-sub">Применение</span>
                             {{descr}}
                             <div class="card-row">
                                 <div class="card-col" wb-if="'{{video}}'>''">
@@ -101,6 +108,10 @@
                 <div class="col-sm-3">
                     <label class="col-form-label">PDF каталог</label>
                     <input name="file" wb="module=filepicker&mode=single&original=false&ext=pdf&width=150&height=100" wb-path="/uploads/products/{{_parent.id}}" />
+                </div>
+                <div class="col-sm-3">
+                    <label class="col-form-label">Инструкция</label>
+                    <input name="file1" wb="module=filepicker&mode=single&original=false&ext=pdf&width=150&height=100" wb-path="/uploads/products/{{_parent.id}}" />
                 </div>
                 <div class="col-sm-9">
                     <textarea name="text" class="form-control" rows="7"></textarea>

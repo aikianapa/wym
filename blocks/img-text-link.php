@@ -5,8 +5,8 @@
                 <wb-var img="/assets/img/img-15.jpg" wb-if="'{{image.0.img}}'==''" else="{{image.0.img}}" />
                 <a href="#" class="page-post-img" style="background-image: url({{_var.img}});"></a>
                 <div class="page-post-info">
-                    <span class="page-post-name" wb-if="'{{title}}'>''"><a href="#">Woo Young Medical</a></span>
-                    <span class="page-post-subtitle" wb-if="'{{subtitle}}'>''">Наша цель – стать лучшей компанией в мире</span>
+                    <span class="page-post-name" wb-if="'{{title}}'>''"><a href="{{link}}">{{title}}</a></span>
+                    <span class="page-post-subtitle" wb-if="'{{subtitle}}'>''">{{subtitle}}</span>
                     <p class="text-break" wb-if="'{{text}}'>''">{{text}}</p>
                     <a wb-if="'{{link}}'>''" href="{{link}}" class="link-more">
                         <span wb-if="'{{button}}'==''">Подробнее</span>
