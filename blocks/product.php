@@ -8,7 +8,7 @@
                 <wb-include wb-tpl="catalog-sidebar.php" />
                 <div class="catalog-content">
                     <div class="card-top">
-                        <div class="card-img"><img src="/assets/img/product-6.png" alt=""></div>
+                        <div class="card-img"><img src="/thumbc/600x600/src{{_parent.cover.0.img}}" alt=""></div>
                         <div class="card-info">
                             <h2 class="card-title" wb-if="'{{title}}'>''">{{title}}</h2>
                             <p class="text-break">{{text}}</p>
