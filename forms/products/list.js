@@ -1,7 +1,7 @@
 (() => {
     var api = "/api/v2"
     var form = "products"
-    var size = 10
+    var size = 20
     var base = api + `/list/${form}?&@size=${size}&@sort=header`
     var list = new Ractive({
         el: `#${form}List`,
