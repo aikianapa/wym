@@ -3,10 +3,10 @@
         <div class="wrapper">
             <div class="page-top">
                 <h1 class="page-title" wb-if="'{{_route.direction}}'==''">Каталог продуктов</h1>
-                <h1 class="page-title" wb-if="'{{_route.direction}}'>''">Каталог продуктов: {{_var.directions.{{_route.direction}}.name}}</h1>
+                <h1 class="page-title" wb-if="'{{_route.direction}}'>''">{{_var.directions.{{_route.direction}}.name}}</h1>
             </div>
             <div class="catalog-row">
-                <wb-include wb-tpl="catalog-sidebar.php" />
+                <wb-include wb-tpl="catalog-sidebar.php" wb-if="'{{_route.direction}}'==''" />
                 <div class="catalog-content">
                     <div class="products-row">
                         <wb-var filter="speed=[{{_route.speed}}]" wb-if="'{{_route.speed}}'>''" else="speed=[per]" />

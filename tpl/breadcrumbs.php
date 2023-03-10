@@ -7,7 +7,7 @@
 
 <wb-var midcrumb='{{yongerCrumbs({{_var.parent}})}}' wb-if="'{{_var.parent}}'>'/'" else='' />
 
-<ul class="crumbs">
+<ul class="crumbs" wb-if="'{{_route.direction}}'==''">
     <li><a href="/">Главная</a></li>
     <wb-foreach wb="from=_var.midcrumb&tpl=false">
         <li wb-if="'{{path}}' > ''">
@@ -17,6 +17,12 @@
             {{header}}
         </li>
     </wb-foreach>
+</ul>
+
+<ul class="crumbs" wb-if="'{{_route.direction}}'>''">
+    <li><a href="/">Главная</a></li>
+    <li><a href="/directions">Медицинские направления</a></li>
+    <li>{{_var.directions.{{_route.direction}}.name}}</li>
 </ul>
 
 </html>
