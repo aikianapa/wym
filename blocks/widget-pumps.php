@@ -38,10 +38,9 @@
                                     </div>
                                     <a href="/directions" class="primary-btn">Медицинские направления</a>
                                 </div>
-                                <div class="swiper feedback">
-                                    <div class="swiper-wrapper">
+
                                         <wb-foreach wb="from=_var.item.{{_var.id}}_feedback&tpl=false">
-                                            <blockquote class="swiper-slide">
+                                            <blockquote >
                                                 <div class="blockquote-top">
                                                     <div class="blockquote-user"><img src="/thumbc/60x60/src{{avatar.0.img}}" alt=""></div>
                                                     <span class="blockquote-name">{{bq_title}}</span>
@@ -49,8 +48,6 @@
                                                 <p class="text-break">{{bq_text}}</p>
                                             </blockquote>
                                         </wb-foreach>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
