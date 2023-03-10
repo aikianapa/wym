@@ -119,6 +119,11 @@
                     <input class="form-control" type="text" name="title" placeholder="Заголовок">
                 </div>
             </div>
+            <div class="row">
+                <div class="mt-2 col-12">
+                    <textarea name="text" class="form-control" rows="7"></textarea>
+                </div>
+            </div>
             <div class="divider-text">
                 Характеристики
             </div>
@@ -144,9 +149,6 @@
                 <div class="col-sm-3">
                     <label class="col-form-label">Инструкция</label>
                     <input name="file1" wb="module=filepicker&mode=single&original=false&ext=pdf&width=150&height=100" wb-path="/uploads/products/{{_parent.id}}" />
-                </div>
-                <div class="mt-2 col-12">
-                    <textarea name="text" class="form-control" rows="7"></textarea>
                 </div>
             </div>
             <div class="form-group row">
