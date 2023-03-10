@@ -12,6 +12,21 @@
                         <div class="card-info">
                             <h2 class="card-title" wb-if="'{{title}}'>''">{{title}}</h2>
                             <p class="text-break">{{text}}</p>
+
+
+
+                            <img src="{{image.0.img}}" alt="">
+                            <div class="card-table">
+                                <table>
+                                    <wb-foreach wb="from=props&tpl=false">
+                                        <tr wb-if="'{{prop_name}}'>'' OR '{{prop_value}}'>''">
+                                            <td class="prop-name">{{prop_name}}</td>
+                                            <td class="prop-value">{{prop_value}}</td>
+                                        </tr>
+                                    </wb-foreach>
+                                </table>
+                            </div>
+
                             <div class="card-link" wb-if="'{{file.0.img}}'>''">
                                 <a href="{{file.0.img}}" download="{{_parent.header}}.pdf">
                                     <img src="/assets/img/icons/pdf.svg" alt="">
@@ -104,6 +119,23 @@
                     <input class="form-control" type="text" name="title" placeholder="Заголовок">
                 </div>
             </div>
+            <div class="divider-text">
+                Характеристики
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <input name="image" wb="module=filepicker&mode=single&original=false&ext=jpg,jpeg,gif,png,webp&width=150&height=100" wb-path="/uploads/products/{{_parent.id}}" />
+                </div>
+                <div class="col-sm-9">
+                    <wb-multiinput name="props">
+                        <div class="col"><input class="form-control" name="prop_name"></div>
+                        <div class="col"><input class="form-control" name="prop_value"></div>
+                    </wb-multiinput>
+                </div>
+            </div>
+            <div class="divider-text">
+                Каталог, инструкция и текст
+            </div>
             <div class="form-group row">
                 <div class="col-sm-3">
                     <label class="col-form-label">PDF каталог</label>
@@ -113,7 +145,7 @@
                     <label class="col-form-label">Инструкция</label>
                     <input name="file1" wb="module=filepicker&mode=single&original=false&ext=pdf&width=150&height=100" wb-path="/uploads/products/{{_parent.id}}" />
                 </div>
-                <div class="col-sm-9">
+                <div class="mt-2 col-12">
                     <textarea name="text" class="form-control" rows="7"></textarea>
                 </div>
             </div>
