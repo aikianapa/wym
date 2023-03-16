@@ -26,20 +26,21 @@
                                     </wb-foreach>
                                 </table>
                             </div>
-
-                            <div class="card-link" wb-if="'{{file.0.img}}'>''">
-                                <a href="{{file.0.img}}" download="{{_parent.header}}.pdf">
-                                    <img src="/assets/img/icons/pdf.svg" alt="">
-                                    <wb-var info="{{fileinfo({{file.0.img}})}}" />
-                                    <span>Скачать PDF-каталог</span>({{_var.info.size}})
-                                </a>
-                            </div>
-                            <div class="card-link" wb-if="'{{file1.0.img}}'>''">
-                                <a href="{{file1.0.img}}" download="{{_parent.header}}.pdf">
-                                    <img src="/assets/img/icons/pdf.svg" alt="">
-                                    <wb-var info="{{fileinfo({{file1.0.img}})}}" />
-                                    <span>Скачать инструкцию</span>({{_var.info.size}})
-                                </a>
+                            <div class="card-links">
+                                <div class="card-link" wb-if="'{{file.0.img}}'>''">
+                                    <a href="{{file.0.img}}" download="{{_parent.header}}.pdf">
+                                        <img src="/assets/img/icons/pdf.svg" alt="">
+                                        <wb-var info="{{fileinfo({{file.0.img}})}}" />
+                                        <span>Скачать PDF-каталог</span>({{_var.info.size}})
+                                    </a>
+                                </div>
+                                <div class="card-link" wb-if="'{{file1.0.img}}'>''">
+                                    <a href="{{file1.0.img}}" download="{{_parent.header}}.pdf">
+                                        <img src="/assets/img/icons/pdf.svg" alt="">
+                                        <wb-var info="{{fileinfo({{file1.0.img}})}}" />
+                                        <span>Скачать инструкцию</span>({{_var.info.size}})
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
