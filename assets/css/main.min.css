@@ -8108,6 +8108,18 @@ blockquote {
 .card-top .card-table table td{
     border: 1px solid #ececec!important;
 }
+.card-top .card-table table tr:first-child td:first-child{
+    border-radius: 8px 0 0 0;
+}
+.card-top .card-table table tr:first-child td:last-child{
+    border-radius: 0 8px 0 0;
+}
+.card-top .card-table table tr:last-child td:first-child{
+    border-radius: 0 0 0 8px;
+}
+.card-top .card-table table tr:last-child td:last-child{
+    border-radius: 0 0 8px 0;
+}
 .about-img-main-img-12,.about-img-main-img-13,.about-img-main-img-14,.about-img-main-img-15{
     position: absolute;
 }
