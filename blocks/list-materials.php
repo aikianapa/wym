@@ -11,6 +11,7 @@
                     <div class="materials-grid-item" v-for="item in materials.result" :key="item.id">
                         <div class="materials-card">
                             <a :href="item.link" class="materials-img">
+                                <span class="news-date">25.09.2023</span>
                                 <span class="materials-img-wrap" :style="{ 'background-image': 'url(/thumbc/740x320/src' + item.cover[0].img + ')' }"></span>
                             </a>
                             <a :href="item.link" class="materials-tag">{{item.tag}}</a>
