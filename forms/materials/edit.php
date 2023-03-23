@@ -21,7 +21,10 @@
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <div class="my-0 divider-text">Обложка</div>
-                                        <wb-module wb="module=filepicker&original=false&mode=single&width=800&&height=300" wb-path="/uploads/materials/{{_var.id}}" name="cover">
+                                        <wb-module wb="module=filepicker&mode=single&original=false&width=800&height=300" 
+                                        wb-path="/uploads/materials/{{_var.id}}" 
+                                        wb-ext="jpg,jpeg,gif,png,webp,svg"
+                                        name="cover">
                                         </wb-module>
                                     </div>
                                 </div>
