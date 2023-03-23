@@ -1,5 +1,5 @@
 <view>
-    <section class="page article pt-0">
+    <section class="pt-0 page article">
         <div class="wrapper">
             <div class="page-top">
                 <h1 class="page-title">Новости</h1>
