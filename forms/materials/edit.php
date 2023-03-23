@@ -9,7 +9,7 @@
                 <div class="col-7">
                     <h5 class='header'></h5>
                 </div>
-                <i class="fa fa-close r-20 position-absolute cursor-pointer" data-dismiss="modal" aria-label="Close"></i>
+                <i class="cursor-pointer fa fa-close r-20 position-absolute" data-dismiss="modal" aria-label="Close"></i>
             </div>
             <div class="modal-body pd-20">
                 <div class="row">
@@ -20,15 +20,12 @@
                             <div>
                                 <div class="form-group row">
                                     <div class="col-12">
-                                        <div class="divider-text my-0">Обложка</div>
-                                        <wb-module wb="module=filepicker&mode=single&original=false&width=800&height=300" 
-                                        wb-path="/uploads/materials/{{_var.id}}" 
-                                        wb-ext="jpg,jpeg,gif,png,webp,svg"
-                                        name="cover">
+                                        <div class="my-0 divider-text">Обложка</div>
+                                        <wb-module wb="module=filepicker&mode=single&original=false&width=800&height=300" wb-path="/uploads/materials/{{_var.id}}" wb-ext="jpg,jpeg,gif,png,webp,svg" name="cover">
                                         </wb-module>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-1">
+                                <div class="mb-1 form-group row">
                                     <label class="col-md-4">
                                         <input name="active" wb-module="swico" data-size="36">
                                     </label>
@@ -36,14 +33,14 @@
                                         <input name="header" class="form-control" placeholder="Заголовок" required>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-1">
+                                <div class="mb-1 form-group row">
 
                                     <label class="col-form-label col-md-4">Дата</label>
                                     <div class="col-md-8">
                                         <input type="datepicker" name="date" class="form-control" wb="module=datetimepicker" required>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-1">
+                                <div class="mb-1 form-group row">
                                     <label class="col-form-label col-md-4">Тип материала</label>
                                     <div class="col-md-8">
                                         <select class="form-control" name="materials" wb-select2 placeholder="Серия">
@@ -53,7 +50,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-1">
+                                <div class="mb-1 form-group row">
                                     <div class="col-12">
                                         <textarea rows="auto" name="descr" class="form-control" placeholder="Короткое описание" required></textarea>
                                     </div>
@@ -84,9 +81,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <i></i>
-                <i class="fa fa-close cursor-pointer" data-dismiss="modal" aria-label="Close"></i>
+                <i class="cursor-pointer fa fa-close" data-dismiss="modal" aria-label="Close"></i>
             </div>
-            <div class="modal-body p-0 pb-5 scroll-y">
+            <div class="p-0 pb-5 modal-body scroll-y">
                 <div class="list-group" id="{{_form}}EditFormListBlocks">
                     <wb-foreach wb="from=_null&render=client&bind=yonger.blocks">
                         <a class="list-group-item list-group-item-action" href="javascript:void(0)" data-name="{{name}}" onclick="yonger.yongerPageBlockAdd('{{id}}')">
