@@ -11,7 +11,7 @@
                         <div class="news-col" v-for="item in news.result" :key="item.id">
                             <div class="news-wrap">
                                 <a :href="item.link" class="news-img">
-                                    <span class="news-date" v-if="!item.expired">{{item.date}}</span>
+                                    <span class="event-date" v-if="!item.expired">{{item.date}}</span>
                                     <span class="news-img-wrap" :style="{ 'background-image': 'url(/thumbc/740x320/src' + item.cover[0].img + ')' }"></span></a>
                                 <span class="news-name"><a :href="item.link">{{item.header}}</a></span>
                                 <p><a :href="item.link">{{item.short}}</a></p>
