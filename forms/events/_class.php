@@ -4,8 +4,10 @@ class eventsClass extends cmsFormsClass {
     function beforeItemShow(&$item) {
         if (!$item) return;
         $data = $this->app->dot($item);
+        $date = date('d.m.Y', strtotime($item['date']));
         isset($item['header'])  AND isset($item['header'][$_SESSION['lang']]) ? $item['header'] = $item['header'][$_SESSION['lang']] : null;
-        isset($item['date']) ? $item['date'] = date('d.m.Y H:i',strtotime($item['date'])) : null;
+        $item['expired'] = date('Y-m-d') > $date ? true : false; 
+        isset($item['date']) ? $item['date'] = $date : null;
         $data->get('cover.0.img') > '' ? null : $data->set('cover.0.img', '/assets/img/placeholder.jpg');
         $item['link'] = yongerFurl($item);
         $this->prevnext($item);

@@ -11,8 +11,11 @@
                         <div class="news-col" v-for="item in news.result" :key="item.id">
                             <div class="news-wrap">
                                 <a :href="item.link" class="news-img">
+                                    <span class="news-date">{{item.date.split(' ')[0]}}</span>
                                     <span class="news-img-wrap" :style="{ 'background-image': 'url(/thumbc/740x320/src' + item.cover[0].img + ')' }"></span>
                                 </a>
+
+
                                 <a :href="item.link" v-if="item.type=='n'" class="news-tag">Новость</a>
                                 <a :href="item.link" v-if="item.type=='a'" class="news-tag">Статья</a>
                                 <span class="news-name"><a :href="item.link">{{item.header}}</a></span>
@@ -32,7 +35,10 @@
                     createApp({
                         data() {
                             return {
-                                news: {}
+                                news: {},
+                                month: {
+                                    '01': 'Январь'
+                                }
                             }
                         },
                         methods: {
