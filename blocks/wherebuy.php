@@ -10,7 +10,7 @@
                     <div class="buy-col">
                         <div class="buy-wrap">
                             <div class="buy-logo">
-                                <a href="{{whlink}}" target="_blank">
+                                <a href="{{whlink}}" rel="nofollow" target="_blank">
                                     <img src="/thumb/300x80/src{{image.0.img}}" alt="{{whname}}">
                                 </a>
                             </div>
