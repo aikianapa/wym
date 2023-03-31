@@ -6,7 +6,7 @@
             <wb-foreach wb="from=images&tpl=false">
                 <div class="partners-item">
                     <a href="{{partlink}}" class="partners-item-wrap">
-                        <img src="/thumbc/160x30/src{{image.0.img}}" alt="{{partname}}">
+                        <img src="/thumb/160x30/src{{image.0.img}}" alt="{{partname}}">
                     </a>
                 </div>
             </wb-foreach>
