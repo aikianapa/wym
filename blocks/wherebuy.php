@@ -11,7 +11,7 @@
                         <div class="buy-wrap">
                             <div class="buy-logo">
                                 <a href="{{whlink}}" rel="nofollow" target="_blank">
-                                    <img src="/thumb/300x80/src{{image.0.img}}" alt="{{whname}}">
+                                    <img src="/thumb/src{{image.0.img}}" alt="{{whname}}">
                                 </a>
                             </div>
                             <span class="buy-name" wb-if="'{{whname}}'>''">{{whname}}</span>
