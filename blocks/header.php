@@ -21,7 +21,7 @@
         <wb-var contact_ok="{{ok}}" wb-if="'{{name}}'=='contacts'" />
     </wb-foreach>
 
-    <header  class="header">
+    <header class="header">
         <div class="wrapper">
             <div class="header-top">
                 <i class="header-bar"></i>
@@ -97,7 +97,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="directory-main">
+                <div class="directory-main" wb-if="'{{count({{_var.lastmater}})}}'>'0'">
                     <wb-foreach wb="from=_var.lastmater&tpl=false">
                         <div class="materials-items">
                             <a class="materials-items-img"><span class="materials-items-img-wrap" style="background-image: url(/thumbc/676x320/src{{cover.0.img}});"></span></a>
