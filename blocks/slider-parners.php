@@ -16,7 +16,7 @@
                         <div class="swiper-wrapper" wb-if="'{{name}}'=='widget-partners'">
                             <wb-foreach wb="from=images&tpl=false&limit=10">
                                 <div class="partners-slide swiper-slide">
-                                    <a rel="nofollow" href="{{partlink}}" target="_blank"><img src="/thumbc/src{{image.0.img}}" alt="{{partname}}"></a>
+                                    <a rel="nofollow" href="{{partlink}}" target="_blank"><img src="/thumb/300x150/src{{image.0.img}}" alt="{{partname}}"></a>
                                 </div>
                             </wb-foreach>
                         </div>
