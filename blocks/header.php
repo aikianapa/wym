@@ -5,7 +5,7 @@
     <wb-var partners wb-api="/api/v2/list/pages?active=on&path=&name=partners&@return=blocks" />
     <wb-var wherebuy wb-api="/api/v2/list/pages?active=on&path=&name=wherebuy&@return=blocks" />
     <wb-var lastevent wb-api="/api/v2/list/events?@limit=1&@sort=date:d" />
-    <wb-var lastmater wb-api="/api/v2/list/materials?@limit=1&@sort=date:d" />
+    <wb-var lastmater wb-api="/api/v2/list/materials?active=on&@limit=1&@sort=date:d" />
     <wb-var speed wb-api="/api/v2/list/catalogs/speed/tree.data" />
     <wb-var directions wb-api="/api/v2/list/catalogs/directions/tree.data" />
     <wb-foreach wb="from=_var.clist.0.blocks&tpl=false">
