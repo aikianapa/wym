@@ -7,7 +7,7 @@
             <div class="politics-content">
                 <wb-var mrg="mr-{{imgmrg}}" wb-if=" '{{imgpos}}' == 'left'" />
                 <wb-var mrg="ml-{{imgmrg}}" wb-if=" '{{imgpos}}' == 'right'" />
-                <img data-src="{{image.0.img}}" alt="header" class="img-fluid w-{{imgwidth}} float-{{imgpos}} mb-{{imgmrg}} {{_var.mrg}}" wb-if="'{{image.0.img}}' > ''" />
+                <img src="{{image.0.img}}" alt="header" class="img-fluid w-{{imgwidth}} float-{{imgpos}} mb-{{imgmrg}} {{_var.mrg}}" wb-if="'{{image.0.img}}' > ''" />
                 {{text}}
             </div>
         </div>
