@@ -2,14 +2,14 @@
 <div id="yongerSpace">
     <div id="{{_form}}List">
         <nav class="nav navbar navbar-expand-md col">
-            <h3 class="tx-bold tx-spacing--2 order-1">Продукция</h3>
+            <h3 class="order-1 tx-bold tx-spacing--2">Продукция</h3>
 
-            <a href="#" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'modals'}" class="ml-auto order-2 float-right btn btn-primary">
+            <a href="#" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'modals'}" class="order-2 float-right ml-auto btn btn-primary">
                 <img src="/module/myicons/24/FFFFFF/users-15.svg" /> Добавить продукт
             </a>
         </nav>
-        <div class="yonger-nested m-2 p-2">
-            <div class="bg-light p-3 mb-2 rounded search">
+        <div class="p-2 m-2 yonger-nested">
+            <div class="p-3 mb-2 rounded bg-light search">
                 <div class="row">
                     <div class="col-6">
                         <input type="search" class="form-control" name="filter" placeholder="{{_lang.search}}" on-change="filter">
@@ -28,6 +28,14 @@
             <ul class="list-group">
                 {{#each result}}
                     <li class="list-group-item d-flex align-items-center" data-id="{{.id}}">
+                        <div class="wd-30">
+                            {{#if ~/sort == true}}
+                                <img src="/module/myicons/24/333333/arrows-diagrams-29.svg" width="24" height="24">
+                            {{/if}}
+                            {{#if ~/sort == false}}
+                                <img src="/module/myicons/24/333333/dots.svg" width="24" height="24">
+                            {{/if}}
+                        </div>
                         <div class="wd-40p">{{.header}}</div>
                         <div class="wd-30p tx-11">{{.phone}}<br>{{.email}}</div>
                         <div class="wd-10p">{{.role}}</div>

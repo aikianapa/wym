@@ -2,7 +2,7 @@
     var api = "/api/v2"
     var form = "products"
     var size = 20
-    var base = api + `/list/${form}?&@size=${size}&@sort=header`
+    var base = api + `/list/${form}?&@size=${size}&@sort=_sort`
     var list = new Ractive({
         el: `#${form}List`,
         template: $(`#${form}List`).html(),
@@ -10,16 +10,15 @@
             base: base,
             result: [],
             pagination: [],
-            user: wbapp._session.user
+            user: wbapp._session.user,
+            filter: {},
+            sort: false
         },
         on: {
             init() {
                 let base = this.get("base");
                 wbapp.post(`${base}`, {}, function (data) {
-                    list.set("result", data.result);
-                    list.set("pagination", data.pagination);
-                    list.set("page", data.page);
-                    list.set("pages", data.pages);
+                    list.fire("setData", null, data)
                 })
             },
             setData(ev, data) {
@@ -27,6 +26,24 @@
                 list.set("pagination", data.pagination);
                 list.set("page", data.page);
                 list.set("pages", data.pages);
+                if (list.get('sort') == true) {
+                    $(`#${form}List .list-group`).sortable("destroy");
+                    list.set("sort", false);
+                }
+                let filter = list.get('filter')
+                if (list.get('sort') == false && Object.keys(filter).length == 0) {
+                    list.set("sort", true);
+                    $(`#${form}List .list-group`).sortable({
+                        update: function (ev, line) {
+                            let data = {}
+                            $(ev.target).children().each(function (i, li) {
+                                data[i] = $(li).data('id')
+                            })
+                            wbapp.post(`/api/v2/func/${form}/sort`, data)
+                        }
+                    });
+                }
+                document.getElementById(`${form}List`).scrollIntoView()
             },
             setPage(ev) {
                 let page = $(ev.node).attr("data-page");
@@ -45,10 +62,10 @@
             },
             filter(ev) {
                 let base = this.get("base");
-                let filter = { isgroup: { '$ne': 'on' } }
+                let filter = {}
                 $(list.el).find('.search :input').each(function () {
-                    if ($(this).attr('name') == 'filter') {
-                        let val = $(this).val()
+                    let val = $(this).val()
+                    if (val > '' && $(this).attr('name') == 'filter') {
                         filter['$or'] = [
                             { header: { '$like': val } }
                         ]
@@ -58,12 +75,10 @@
                         speed == '*' ? null : filter.speed = {'$like':speed}
                     }
                 })
-
+                this.set('filter', filter)
+                console.log(filter);
                 wbapp.post(`${base}`, { filter: filter }, function (data) {
-                    list.set("result", data.result);
-                    list.set("pagination", data.pagination);
-                    list.set("page", data.page);
-                    list.set("pages", data.pages);
+                    list.fire("setData", null, data)
                 })
             },
             remove(ev) {
