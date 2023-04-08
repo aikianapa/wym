@@ -7,7 +7,7 @@
             </div>
             <div class="catalog-row">
                 <wb-include wb-tpl="catalog-sidebar.php" wb-if="'{{_route.direction}}'==''" />
-                <div class="catalog-content">
+                <div class="catalog-content" wb-if="'{{_route.direction}}'==''">
                     <div class="products-row">
                         <wb-var filter="speed=[{{_route.speed}}]" wb-if="'{{_route.speed}}'>''" else="speed=[per]" />
                         <wb-var filter="directions=[{{_route.direction}}]" wb-if="'{{_route.direction}}'>''" />
