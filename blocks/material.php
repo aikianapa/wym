@@ -55,9 +55,8 @@
                             {{text}}
                         </div>
                     </div>
-                    <div class="event-content" wb-if="'{{pdf.0.img}}'>''">
+                    <div class="event-content" wb-if="'{{pdf.0.img}}'>'' && '{{_sess.user.role}}'>''">
                         <iframe class="material w-100 b-0" src="{{pdf.0.img}}#toolbar=1&view=Fit" onload="iframeHeight()">
-
                         </iframe>
                     </div>
                     <wb-include wb-tpl="allow-message.php" />
