@@ -96,6 +96,8 @@
         <div class="divider-text">Изображения для слайдшоу</div>
         <wb-module wb="module=filepicker&original=false&width=250&height=100" wb-path="/uploads/materials/{{_var.id}}" wb-ext="jpg,jpeg,gif,png,webp,svg" name="images">
         </wb-module>
+    </div>
+    <div>
         <div class="divider-text">PDF файл</div>
         <wb-module wb="module=filepicker&original=false&width=250&height=100" wb-path="/uploads/materials/{{_var.id}}" wb-ext="pdf" name="pdf">
         </wb-module>
