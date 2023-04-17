@@ -1,6 +1,6 @@
 <view>
     <div class="header-bg"></div>
-    <wb-var products wb-api="/api/v2/list/products?active=on&@sort=_sort&@return=id,header,_form,directions,link,_sort,active,speed,direction" />
+    <wb-var products wb-api="/api/v2/list/products?active=on&@sort=_sort&@return=id,header,_form,directions,link,_sort,active,speed,direction,short,cover" />
     <wb-var clist wb-api="/api/v2/list/pages?active=on&name=contacts&@return=blocks" />
     <wb-var partners wb-api="/api/v2/list/pages?active=on&path=&name=partners&@return=blocks" />
     <wb-var wherebuy wb-api="/api/v2/list/pages?active=on&path=&name=wherebuy&@return=blocks" />
