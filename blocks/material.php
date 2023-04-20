@@ -36,15 +36,19 @@
                     <div class="event-news" wb-if="'{{_parent.materials}}' != 'video'">
                         <wb-foreach wb="table=materials&tpl=false&limit=1&sort=date:d" wb-filter="active=on&materials!=video&id!={{_parent.id}}">
                             <a href="{{yongerFurl()}}" class="news-tag">{{tag}}</a>
-                            <span class="event-tit">{{header}}</span>
-                            <p>{{descr}}</p>
+                            <a href="{{yongerFurl()}}">
+                                <span class="event-tit">{{header}}</span>
+                                <p>{{descr}}</p>
+                            </a>
                         </wb-foreach>
                     </div>
                     <div class="event-news" wb-if="'{{_parent.materials}}' == 'video'">
                         <wb-foreach wb="table=materials&tpl=false&limit=1&sort=date:d" wb-filter="active=on&materials=video&id!={{_parent.id}}">
                             <a href="{{yongerFurl()}}" class="news-tag">{{tag}}</a>
-                            <span class="event-tit">{{header}}</span>
-                            <p>{{descr}}</p>
+                            <a href="{{yongerFurl()}}">
+                                <span class="event-tit">{{header}}</span>
+                                <p>{{descr}}</p>
+                            </a>
                         </wb-foreach>
                     </div>
                 </div>
