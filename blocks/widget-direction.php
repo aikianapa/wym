@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="direction-slide-btn">
-                                    <a href="/direction/{{id}}" class="more-btn" data-direction="direction-1">Подробнее</a>
+                                    <a href="/direction/{{id}}" class="more-btn" data-direction="direction-{{_ndx}}">Подробнее</a>
                                 </div>
                             </div>
                         </wb-foreach>
