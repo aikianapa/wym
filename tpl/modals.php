@@ -190,7 +190,7 @@
                 </div>
                 <div class="modal-buttons">
                     <button class="primary-btn" v-on:click="submit">Войти</button>
-                    <a data-fancybox data-src="#modal-7" v-on:click="close" class="primary-btn primary-btn-gray cursor-pointer">Зарегистрироваться</a>
+                    <a data-fancybox data-src="#modal-7" v-on:click="close" class="cursor-pointer primary-btn primary-btn-gray">Зарегистрироваться</a>
                 </div>
             </wb-data>
         </form>
