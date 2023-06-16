@@ -13,7 +13,7 @@
                         <div class="purpose-slider swiper-container">
                             <div class="swiper-wrapper">
                                 <wb-foreach wb="from=images&tpl=false">
-                                    <div class="purpose-slide swiper-slide">
+                                    <div class="purpose-slide swiper-slide" wb-if="'{{image.0.img}}'>''">
                                         <a data-fancybox="gallery" href="{{image.0.img}}">
                                             <img loading="lazy" src="/thumbc/292x400/src{{image.0.img}}" alt="{{certname}}">
                                         </a>
