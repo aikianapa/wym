@@ -39,15 +39,15 @@
                                     <a href="/directions" class="primary-btn">Медицинские направления</a>
                                 </div>
 
-                                        <wb-foreach wb="from=_var.item.{{_var.id}}_feedback&tpl=false">
-                                            <blockquote >
-                                                <div class="blockquote-top">
-                                                    <div class="blockquote-user"><img src="/thumbc/60x60/src{{avatar.0.img}}" alt=""></div>
-                                                    <span class="blockquote-name">{{bq_title}}</span>
-                                                </div>
-                                                <p class="text-break">{{bq_text}}</p>
-                                            </blockquote>
-                                        </wb-foreach>
+                                <wb-foreach wb="from=_var.item.{{_var.id}}_feedback&tpl=false">
+                                    <blockquote>
+                                        <div class="blockquote-top" wb-if="'{{bq_title}}'>'' OR '' > '{{bq_text}}'">
+                                            <div class="blockquote-user" wb-if="'{{avatar.0.img}}'>''"><img src="/thumbc/60x60/src{{avatar.0.img}}" alt=""></div>
+                                            <span class="blockquote-name">{{bq_title}}</span>
+                                        </div>
+                                        <p class="text-break">{{bq_text}}</p>
+                                    </blockquote>
+                                </wb-foreach>
                             </div>
                         </div>
                     </div>
