@@ -40,8 +40,8 @@
                                 </div>
 
                                 <wb-foreach wb="from=_var.item.{{_var.id}}_feedback&tpl=false">
-                                    <blockquote>
-                                        <div class="blockquote-top" wb-if="'{{bq_title}}'>'' OR '' > '{{bq_text}}'">
+                                    <blockquote wb-if="'{{bq_title}}'>'' OR '' > '{{bq_text}}'">
+                                        <div class="blockquote-top">
                                             <div class="blockquote-user" wb-if="'{{avatar.0.img}}'>''"><img src="/thumbc/60x60/src{{avatar.0.img}}" alt=""></div>
                                             <span class="blockquote-name">{{bq_title}}</span>
                                         </div>
