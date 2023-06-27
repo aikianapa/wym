@@ -13,7 +13,7 @@
                         <li><span class="action-cr"><i class="hb-ico time-ico"></i></span><span>{{_var.contact_worktime}}</span></li>
                     </ul>
                     <span class="contacts-title">Реквизиты</span>
-                    <p>ИНН {{inn}} <br>ОГРН {{ogrn}} <br>БИК {{bik}}</p>
+                    <p><span wb-if="'{{inn}}'>''">ИНН {{inn}}<br></span><span wb-if="'{{ogrn}}'>''">ОГРН {{ogrn}} <br></span><span wb-if="'{{bik}}'>''">БИК {{bik}}</span></p>
                 </div>
                 <div class="contacts-main">
                     <div class="contacts-map">

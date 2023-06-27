@@ -1,6 +1,6 @@
 <view>
     <wb-var title="{{title}}" wb-if="'{{title}}'>''" else="Свяжитесь с нами" />
-    <wb-var text="{{text}}" wb-if="'{{text}}'>''" else="Оставьте свое сообщение и мы ответим на него в самое ближайшее время" />
+    <wb-var text="{{text}}" wb-if="'{{text}}'>''" else="Оставьте свое сообщение и мы ответим на него в ближайшее время" />
     <wb-var img="/thumbc/450x600/src/assets/img/img-13.jpg" wb-if="'{{image.0.img}}'==''" else="/thumbc/450x600/src{{image.0.img}}" />
     <section class="contactUs">
         <div class="wrapper">

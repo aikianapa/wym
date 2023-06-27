@@ -2,7 +2,7 @@
     <section class="catalog">
         <div class="wrapper">
             <div class="page-top">
-                <h1 class="page-title" wb-if="'{{_route.direction}}'==''">Каталог продуктов</h1>
+                <h1 class="page-title" wb-if="'{{_route.direction}}'==''">{{_parent.header}}</h1>
                 <h1 class="page-title" wb-if="'{{_route.direction}}'>''">{{_var.directions.{{_route.direction}}.name}}</h1>
             </div>
             <div class="catalog-row">

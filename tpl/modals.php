@@ -55,8 +55,8 @@
 <div style="display: none;" id="modal-2" class="modal">
     <div class="modal-wrap">
         <div class="modal-top">
-            <span class="modal-title">Перезвоните мне</span>
-            <p>Сообщите нам свой номер телефона и мы перезвоним Вам</p>
+            <span class="modal-title">Заявка на обратный звонок</span>
+            <p>Сообщите нам свой номер телефона, вопрос и мы перезвоним Вам</p>
         </div>
         <wb-var vid="{{wbNewId()}}" />
         <form action="quotes" method="POST" vid="{{_var.vid}}">
@@ -68,8 +68,9 @@
                     <input type="text" name="phone" placeholder="Телефон">
                 </div>
                 <div class="input-block">
-                    <input type="hidden" name="message" placeholder="Сообщение" value="Перезвоните мне">
+                    <textarea rows="3" name="message" placeholder="Опишите вопрос"></textarea>
                 </div>
+
                 <div class="modal-bottom">
                     <button class="primary-btn" type="submit" :disabled="!approve">Отправить</button>
                     <div class="checkbox">

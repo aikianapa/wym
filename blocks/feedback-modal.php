@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label>Текст</label>
-                <textarea class="form-control" rows="auto" name="text" placeholder="Оставьте свое сообщение и мы ответим на него в самое ближайшее время"></textarea>
+                <textarea class="form-control" rows="auto" name="text" placeholder="Оставьте свое сообщение и мы ответим на него в ближайшее время"></textarea>
             </div>
         </div>
     </div>
