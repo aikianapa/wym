@@ -1,6 +1,7 @@
 <view>
     <section class="purpose">
         <div class="wrapper">
+            <wb-var imgs="0" />
             <div class="purpose-wrap">
                 <div class="purpose-info">
                     <h2 class="section-title" wb-if="'{{title}}'>''">{{title}}</h2>
@@ -9,11 +10,12 @@
                 </div>
 
                 <wb-foreach wb="from=_var.partners.0.blocks&tpl=false">
-                    <div class=" purpose-sl slider" wb-if="'{{name}}'=='widget-docs'">
+                    <div class="purpose-sl slider" wb-if="'{{name}}'=='widget-docs'">
                         <div class="purpose-slider swiper-container">
                             <div class="swiper-wrapper">
                                 <wb-foreach wb="from=images&tpl=false">
                                     <div class="purpose-slide swiper-slide" wb-if="'{{image.0.img}}'>''">
+                                        <wb-var imgs="{{_var.imgs +1}}" />
                                         <a data-fancybox="gallery" href="{{image.0.img}}">
                                             <img loading="lazy" src="/thumbc/292x400/src{{image.0.img}}" alt="{{certname}}">
                                         </a>
@@ -21,10 +23,15 @@
                                 </wb-foreach>
                             </div>
                         </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev" wb-if="'{{_var.imgs}}'>'0'"></div>
+                        <div class="swiper-button-next" wb-if="'{{_var.imgs}}'>'0'"></div>
                     </div>
                 </wb-foreach>
+
+                <div wb-if="'{{_var.imgs}}'=='0'">
+                    <wb-jq wb="$dom->find('.purpose-sl')->remove();$dom->find('.purpose-info p')->remove()" />
+                    {{text}}
+                </div>
             </div>
         </div>
     </section>
