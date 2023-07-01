@@ -34,7 +34,7 @@
                                 <p class="text-break">{{_var.item.{{_var.id}}_text}}</p>
                                 <div class="about-actions">
                                     <div class="about-link">
-                                        <a href="/catalog" class="link-more">Подробнее о моделях</a>
+                                        <a href="/catalog/speed/{{id}}" class="link-more">Подробнее о моделях</a>
                                     </div>
                                     <a href="/directions" class="primary-btn">Медицинские направления</a>
                                 </div>
