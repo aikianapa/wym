@@ -1933,24 +1933,24 @@ body.compensate-for-scrollbar {
 }
 
 @font-face {
-    font-family: "Open Sans";
+    font-family: "PF BeauSans Pro";
     font-style: normal;
     font-weight: 700;
-    src: url(../fonts/OpenSans-Bold.woff2) format("woff2")
+    src: url(../fonts/PFBeauSansPro-Bold.woff2) format("woff2")
 }
 
 @font-face {
-    font-family: "Open Sans";
+    font-family: "PF BeauSans Pro";
     font-style: normal;
     font-weight: 600;
-    src: url(../fonts/OpenSans-SemiBold.woff2) format("woff2")
+    src: url(../fonts/PFBeauSansPro-SemiBold.woff2) format("woff2")
 }
 
 @font-face {
-    font-family: "Open Sans";
+    font-family: "PF BeauSans Pro";
     font-style: normal;
     font-weight: 400;
-    src: url(../fonts/OpenSans-Regular.woff2) format("woff2")
+    src: url(../fonts/PFBeauSansPro-Bbook.woff2) format("woff2")
 }
 
 ::-webkit-input-placeholder {
@@ -2005,7 +2005,7 @@ html.scroll-hidden {
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "PF BeauSans Pro", sans-serif;
     font-size: 16px;
     line-height: 1.3;
     color: #132342;
@@ -2048,7 +2048,7 @@ button,
 input,
 select,
 textarea {
-    font-family: "Open Sans", sans-serif;
+    font-family: "PF BeauSans Pro", sans-serif;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -8534,4 +8534,187 @@ blockquote {
 
 .h-auto {
     height: auto !important
+}
+.direction-wrap{
+  overflow: visible;
+}
+.direction-name{
+    position: absolute;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    color: #132342;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 100;
+    pointer-events: none;
+}
+.direction-name-1{
+    top: 22%;
+    left: 17%;
+}
+.direction-name-2{
+    top: 10%;
+    left: 33%;
+}
+.direction-name-3{
+    top: 10%;
+    right: 33%;
+}
+.direction-name-4{
+    bottom: 6%;
+    left: 25%;
+}
+.direction-name-5{
+    bottom: 13%;
+    right: 32%;
+}
+.direction-name-6{
+    bottom: 25%;
+    right: 14%;
+}
+.buy .section-top{
+    align-items: flex-start;
+}
+.buy .section-link{
+    margin-top: 13px;
+}
+.buy .section-top.section-second .arrows{
+    top: 0;
+    transform: none;
+}
+.buy-sectionTop{
+    padding-right: 30px;
+}
+.buy-sectionTop p{
+    font-size: 20px;
+    line-height: 1.35;
+    padding-top: 8px;
+    max-width: 940px;
+}
+.page-txt p{
+    font-size: 20px;
+    line-height: 1.35;
+    padding-top: 8px;
+    max-width: 940px;
+}
+.about-info-btn{
+    display: inline-block;
+    position: relative;
+    padding-bottom: 20px;
+}
+.about-info-btn .primary-btn{
+    pointer-events: none;
+}
+.about-info-btn:hover .about-clue{
+    opacity: 1;
+    visibility: visible;
+}
+.about-clue{
+    min-width: 200px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 6px rgba(0,0,0,.05);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+}
+.about-clue::after{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translate(-50%,0);
+    border-bottom: 15px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+.about-clue ul li{
+    padding-bottom: 8px;
+}
+.about-clue ul li:last-child{
+    padding: 0;
+}
+.about-clue ul li a{
+    font-size: 14px;
+    line-height: 1.2;
+    color: #132342;
+    border-bottom: 1px solid #132342;
+    padding-bottom: 3px;
+}
+.about-clue ul li a:hover{
+    border-color: #f9dd71;
+}
+@media only screen and (max-width: 1600px){
+    .direction-name-1{
+        top: 22%;
+        left: 8%;
+    }
+    .direction-name-2{
+        top: 10%;
+        left: 28%;
+    }
+    .direction-name-3{
+        top: 10%;
+        right: 28%;
+    }
+    .direction-name-4{
+        bottom: 6%;
+        left: 20%;
+    }
+    .direction-name-5{
+        bottom: 13%;
+        right: 27%;
+    }
+    .direction-name-6{
+        bottom: 25%;
+        right: 9%;
+    }
+}
+@media only screen and (max-width: 1200px){
+    .direction-name{
+        display: none;
+    }
+    .buy .section-top.section-second{
+        padding-right: 140px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .about-top{
+        margin: 0 0 20px;
+        overflow: visible;
+    }
+    .about-top .about-list{
+        padding: 0;
+    }
+    .about-list li{
+        padding: 0 0 8px;
+    }
+    .about-list li:last-child{
+        padding: 0 0 8px;
+    }
+    .buy .section-top.section-second{
+        padding-right: 0;
+    }
+    .buy .section-top.section-second .section-title{
+        padding: 6px 125px 0 0;
+    }
+    .buy-sectionTop{
+        padding-right: 0;
+    }
+    .buy-sectionTop p{
+        font-size: 14px;
+        line-height: 19px;
+        padding-top: 20px;
+    }
+    .page-txt p{
+        font-size: 14px;
+        line-height: 19px;
+    }
 }
