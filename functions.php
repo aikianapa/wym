@@ -62,6 +62,22 @@ function fileinfo($file)
     return $list;
 }
 
+function dirspd($spd) {
+    $app = $_ENV['app'];
+    $dircat = $app->itemRead('catalogs','directions')['tree']['data'];
+    $directions = [];
+    // Возвращает список направлений по указанной скорости 
+    $host = $app->vars('_route.host');
+    $list = file_get_contents($host. "/api/v2/list/products?active=on&speed=[{$spd}]&@return=directions");
+    $list = json_decode($list,true);
+    foreach(@(array)$list as $item) {
+        foreach(@(array)$item['directions'] as $dir) {
+            if (!in_array($dir, $directions)) $directions[$dir] = $dircat[$dir];
+        }
+    }
+    return array_values($directions);
+}
+
 
 function pumpsFlds($num=1) {
     $res = [];

@@ -4,18 +4,19 @@
         <div class="wrapper">
             <h2 class="section-title">Инфузионные помпы</h2>
             <div class="allTabs">
-                <wb-var dir wb-api="/api/v2/read/catalogs/speed" />
+                <wb-var spd wb-api="/api/v2/read/catalogs/speed" />
                 <div class="about-top">
                     <ul class="about-list tab-list">
-                        <wb-foreach wb="from=_var.dir.tree.data&tpl=false">
+                        <wb-foreach wb="from=_var.spd.tree.data&tpl=false">
                             <wb-var active="active" wb-if="'{{_idx}}'=='0'" else="" />
                             <li><a href="#tab-{{_ndx}}" class="{{_var.active}}">{{name}}</a></li>
                         </wb-foreach>
                     </ul>
                 </div>
-                <wb-foreach wb="from=_var.dir.tree.data&tpl=false">
+                <wb-foreach wb="from=_var.spd.tree.data&tpl=false">
                     <wb-var active="tab-active" wb-if="'{{_idx}}'=='0'" else="" />
                     <wb-var id="{{id}}" />
+                    <wb-var dirsup="{{dirspd({{id}})}}" />
                     <div class="tab tab-{{_ndx}} {{_var.active}}" id="tab-{{_ndx}}">
                         <div class="about-content">
                             <div class="about-img">
@@ -36,7 +37,20 @@
                                     <div class="about-link">
                                         <a href="/catalog/speed/{{id}}" class="link-more">Подробнее о моделях</a>
                                     </div>
-                                    <a href="/directions" class="primary-btn">Медицинские направления</a>
+
+                                    <div class="about-info-btn">
+                                        <a class="primary-btn">Медицинские направления</a>
+                                        <div class="about-clue">
+                                            <ul>
+                                                <wb-foreach wb="from=_var.dirsup&tpl=false">
+                                                    <li>
+                                                        <a href="/direction/{{id}}">{{name}}</a>
+                                                        <p><br>{{data.text}}</p>
+                                                    </li>
+                                                </wb-foreach>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <wb-foreach wb="from=_var.item.{{_var.id}}_feedback&tpl=false">
@@ -61,9 +75,9 @@
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
     </div>
-    <wb-var dir wb-api="/api/v2/read/catalogs/speed" />
+    <wb-var spd wb-api="/api/v2/read/catalogs/speed" />
     <ul class="nav nav-tabs" id="tabsSpeed" role="tablist">
-        <wb-foreach wb="from=_var.dir.tree.data&tpl=false">
+        <wb-foreach wb="from=_var.spd.tree.data&tpl=false">
             <wb-var active="active" wb-if="'{{_idx}}'=='0'" else="" />
             <li class="nav-item">
                 <a class="nav-link {{_var.active}}" id="{{id}}-tab" data-toggle="tab" href="#{{id}}" role="tab" aria-controls="{{id}}" aria-selected="true">{{name}}</a>
@@ -71,7 +85,7 @@
         </wb-foreach>
     </ul>
     <div class="tab-content bd bd-gray-300 bd-t-0 pd-20" id="tabsSpeedContent">
-        <wb-foreach wb="from=_var.dir.tree.data&tpl=false">
+        <wb-foreach wb="from=_var.spd.tree.data&tpl=false">
             <wb-var active="active" wb-if="'{{_idx}}'=='0'" else="" />
             <wb-var id="{{id}}" />
             <wb-var item="{{_post.item}}" />

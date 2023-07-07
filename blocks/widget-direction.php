@@ -5,6 +5,7 @@
     <div class="wrapper">
         <div class="direction-wrap">
             <wb-foreach wb="table=catalogs&item=directions&from=tree.data&tpl=false">
+                <span class="direction-name direction-name-{{_ndx}}">{{name}}</span>
                 <div class="direction-item-info direction-item-info-{{_ndx}}" id="direction-{{_ndx}}">
                     <i class="hb-ico close-ico"></i>
                     <span class="direction-item-tit">{{name}}</span>

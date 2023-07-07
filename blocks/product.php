@@ -64,7 +64,7 @@
                                 </div>
                             </div>
 
-                            <span class="card-sub" wb-if="{{codes.0.type}}'>''">Каталожные номера моделей</span>
+                            <span class="card-sub" wb-if="'{{codes.0.type}}'>''">Каталожные номера моделей</span>
                             <div class="card-table" wb-if="'{{codes.0.type}}'>''">
                                 <table>
                                     <thead>

@@ -4,6 +4,9 @@
             <div class="page-top">
                 <h1 class="page-title" wb-if="'{{title}}'==''">{{_parent.header}}</h1>
                 <h1 class="page-title" wb-if="'{{title}}'>''">{{title}}</h1>
+                <div class="page-txt" wb-if="'{{text}}'>''">
+                    <p>{{text}}</p>
+                </div>
             </div>
             <div class="buy-row">
                 <wb-foreach wb="from=images&tpl=false">
@@ -35,6 +38,11 @@
             <input class="form-control" type="text" name="title" placeholder="Где купить">
         </div>
     </div>
+
+
+
+    <label>Текст</label>
+    <textarea name="text" rows="auto" class="form-control" placeholder="Текст"></textarea>
     <hr class="my-1">
     <wb-multiinput name="images">
         <div class="col-sm-4 col-lg-3">
