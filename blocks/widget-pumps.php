@@ -16,7 +16,7 @@
                 <wb-foreach wb="from=_var.spd.tree.data&tpl=false">
                     <wb-var active="tab-active" wb-if="'{{_idx}}'=='0'" else="" />
                     <wb-var id="{{id}}" />
-                    <wb-var dirsup="{{dirspd({{id}})}}" />
+                    <!--wb-var dirsup="{{dirspd({{id}})}}" /-->
                     <div class="tab tab-{{_ndx}} {{_var.active}}" id="tab-{{_ndx}}">
                         <div class="about-content">
                             <div class="about-img">
@@ -41,14 +41,15 @@
                                     <div class="about-info-btn">
                                         <a class="primary-btn">Медицинские направления</a>
                                         <div class="about-clue">
-                                            <ul>
+                                            <p>{{_var.item.{{_var.id}}_textdir}}</p>
+                                            <!--ul>
                                                 <wb-foreach wb="from=_var.dirsup&tpl=false">
                                                     <li>
                                                         <a href="/direction/{{id}}">{{name}}</a>
                                                         <p><br>{{data.text}}</p>
                                                     </li>
                                                 </wb-foreach>
-                                            </ul>
+                                            </ul-->
                                         </div>
                                     </div>
                                 </div>
@@ -100,6 +101,12 @@
                     <label class="col-sm-3">Текст таба</label>
                     <div class="col-sm-9">
                         <textarea class="form-control" rows="auto" name="{{_var.id}}_text" value="{{_var.item.{{_var.id}}_text}}"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3">Текст про меднаправления</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" rows="auto" name="{{_var.id}}_textdir" value="{{_var.item.{{_var.id}}_textdir}}"></textarea>
                     </div>
                 </div>
                 <div class="divider-text">Отзывы</div>
