@@ -16,7 +16,7 @@ class materialsClass extends cmsFormsClass {
         $data->get('cover.0.img') > '' ? null : $data->set('cover.0.img', '/assets/img/placeholder.jpg');
         $item['link'] = yongerFurl($item);
         $item['tag'] = $materials->get($item['materials'].'.name');
-        $this->prevnext($item);
+        if ($this->app->vars('_route.mode') == 'show') $this->prevnext($item);
     }
 
     public function afterItemRead(&$item) {

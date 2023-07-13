@@ -3,7 +3,11 @@
         <section class="buy" wb-if="'{{name}}'=='wherebuy'">
             <div class="wrapper">
                 <div class="section-top section-second">
-                    <h2 class="section-title">Где купить</h2>
+                    <div class="buy-sectionTop">
+                        <h2 class="section-title" wb-if="'{{_parent.title}}'==''">Где купить</h2>
+                        <h2 class="section-title" wb-if="'{{_parent.title}}'>''">{{_parent.title}}</h2>
+                        <p wb-if="'{{_parent.text}}'>''">{{_parent.text}}</p>
+                    </div>
                     <div class="section-link"><a href="[wherebuy]">Все магазины</a></div>
                     <div class="arrows arrows-dark">
                         <div class="swiper-button-prev"></div>
@@ -34,5 +38,11 @@
 <edit header="Слайдер - Где купить">
     <div>
         <wb-module wb="module=yonger&mode=edit&block=common.inc" />
+    </div>
+    <div>
+        <label>Заголовок</label>
+        <input name="title" class="form-control" placeholder="Где купить">
+        <label>Текст</label>
+        <textarea name="text" rows="auto" class="form-control" placeholder="Текст"></textarea>
     </div>
 </edit>
