@@ -47,7 +47,7 @@
                         <li class="drop" wb-if="_var.sub == 'sub'">
                             <a href="{{path}}" class="arrow-link">{{menu_title}}</a>
                             <ul class="drop-list drop-list-small">
-                                <wb-foreach wb="from=children">
+                                <wb-foreach wb="from=children&tpl=false">
                                     <li wb-if="'{{_idx}}'>0"><a href="{{path}}">{{header}}</a></li>
                                 </wb-foreach>
                             </ul>
@@ -68,6 +68,7 @@
             </div>
         </div>
     </header>
+    
     <div class="directory">
         <div class="wrapper">
             <div class="directory-all">
