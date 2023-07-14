@@ -7,7 +7,7 @@
                         <wb-var button="Подробнее" wb-if="'{{button}}' == ''" else="{{button}}" />
                         <wb-var image="/assets/img/slide-1.jpg" wb-if="'{{image.0.img}}' == ''" else="{{image.0.img}}" />
                         <div class="main-slide swiper-slide">
-                            <div class="main-wrap" style="background-image: url({{_var.image}});">
+                            <div class="main-wrap" style="background-image: url('{{_var.image}}');">
                                 <div class="main-info">
                                     <h2 class="main-title">{{title}}</h2>
                                     <p>{{text}}</p>
@@ -30,7 +30,7 @@
     </div>
     <wb-multiinput name="slider">
         <div class="col-sm-4">
-            <input name="image" wb="module=filepicker&mode=single&width=400&height=200" wb-path="/uploads/blocks/slider">
+            <input name="image" wb="module=filepicker&original=false&mode=single&width=400&height=200" wb-path="/uploads/blocks/slider">
         </div>
         <div class="col-sm-8">
             <div class="mb-1 form-group">
