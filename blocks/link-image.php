@@ -8,7 +8,7 @@
                         <a wb-if="'{{label}}'>''" data-src="#modal-4" href="{{link}}" class="primary-btn">{{label}}</a>
                     </div>
                     <div class="page-contact-img">
-                        <img wb-if="'{{image.0.img}}'==''" src="img/img-16.jpg" alt="{{title}}" class="img-fluid">
+                        <img wb-if="'{{image.0.img}}'==''" src="/assets/img/img-16.jpg" alt="{{title}}" class="img-fluid">
                         <img wb-if="'{{image.0.img}}'>''" src="{{image.0.img}}" alt="{{title}}" class="img-fluid" wb-if="'{{image.0.img}}' > ''" />
                     </div>
                 </div>
