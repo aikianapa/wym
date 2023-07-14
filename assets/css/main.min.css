@@ -3260,7 +3260,7 @@ button {
 .header-menu li a.arrow-link::after {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 30%;
     right: 0;
     width: 8px;
     height: 5px;
