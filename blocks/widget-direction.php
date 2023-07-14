@@ -24,9 +24,9 @@
                 <wb-foreach wb="table=catalogs&item=directions&from=tree.data&tpl=false">
                     <div class="direction-item direction-item-{{_ndx}}" wb-if="'{{active}}'=='on'">
                         <div class="direction-item-imgs" data-direction="direction-{{_ndx}}">
-                            <div class="direction-item-img-1"><img src="/assets/img/Building_1/img-1.png" alt=""></div>
-                            <div class="direction-item-img-2"><img src="/assets/img/Building_1/img-2.png" alt=""></div>
-                            <div class="direction-item-img-3"><img src="/assets/img/Building_1/img-3.png" alt=""></div>
+                            <div class="direction-item-img-1"><img src="/assets/img/Building_{{_ndx}}/img-1.png" alt=""></div>
+                            <div class="direction-item-img-2"><img src="/assets/img/Building_{{_ndx}}/img-2.png" alt=""></div>
+                            <div class="direction-item-img-3"><img src="/assets/img/Building_{{_ndx}}/img-3.png" alt=""></div>
                         </div>
                     </div>
                 </wb-foreach>
@@ -40,9 +40,9 @@
                                 <span class="direction-slide-tit">{{name}}</span>
                                 <div class="direction-slide-img">
                                     <div class="direction-item-imgs direction-item-imgs-1">
-                                        <div class="direction-item-img-1"><img src="/assets/img/Building_1/img-1.png" alt=""></div>
-                                        <div class="direction-item-img-2"><img src="/assets/img/Building_1/img-2.png" alt=""></div>
-                                        <div class="direction-item-img-3"><img src="/assets/img/Building_1/img-3.png" alt=""></div>
+                                        <div class="direction-item-img-1"><img src="/assets/img/Building_{{_ndx}}/img-1.png" alt=""></div>
+                                        <div class="direction-item-img-2"><img src="/assets/img/Building_{{_ndx}}/img-2.png" alt=""></div>
+                                        <div class="direction-item-img-3"><img src="/assets/img/Building_{{_ndx}}/img-3.png" alt=""></div>
                                     </div>
                                 </div>
                                 <div class="direction-slide-btn">
