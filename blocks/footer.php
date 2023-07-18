@@ -9,10 +9,10 @@
                         </div>
                         <p>© 1996-{{date("Y")}}. Все права защищены.</p>
                         <ul class="footer-social">
-                            <li><a href="{{_var.contact_whatsapp}}" target="_blank"><i class="hb-ico whatsapp-ico"></i></a></li>
-                            <li><a href="{{_var.contact_telegram}}" target="_blank"><i class="hb-ico telegram-ico"></i></a></li>
-                            <li><a href="{{_var.contact_vk}}" target="_blank"><i class="hb-ico vk-ico"></i></a></li>
-                            <li><a href="{{_var.contact_ok}}" target="_blank"><i class="hb-ico ok-ico"></i></a></li>
+                            <li wb-if="'{{_var.contact_whatsapp}}'>''"><a href="{{_var.contact_whatsapp}}" target="_blank"><i class="hb-ico whatsapp-ico"></i></a></li>
+                            <li wb-if="'{{_var.contact_telegram}}'>''"><a href="{{_var.contact_telegram}}" target="_blank"><i class="hb-ico telegram-ico"></i></a></li>
+                            <li wb-if="'{{_var.contact_vk}}'>''"><a href="{{_var.contact_vk}}" target="_blank"><i class="hb-ico vk-ico"></i></a></li>
+                            <li wb-if="'{{_var.contact_ok}}'>''"><a href="{{_var.contact_ok}}" target="_blank"><i class="hb-ico ok-ico"></i></a></li>
                         </ul>
                     </div>
                     <div class="footer-col">

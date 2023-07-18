@@ -29,10 +29,10 @@
                     <a href="/"><img src="/assets/img/logo.svg" alt=""></a>
                 </div>
                 <ul class="header-social">
-                    <li><a href="{{_var.contact_whatsapp}}" target="_blank"><i class="hb-ico whatsapp-c-ico"></i></a></li>
-                    <li><a href="{{_var.contact_telegram}}" target="_blank"><i class="hb-ico telegram-c-ico"></i></a></li>
-                    <li><a href="{{_var.contact_vk}}" target="_blank"><i class="hb-ico vk-c-ico"></i></a></li>
-                    <li><a href="{{_var.contact_ok}}" target="_blank"><i class="hb-ico ok-c-ico"></i></a></li>
+                    <li wb-if="'{{_var.contact_whatsapp}}'>''"><a href="{{_var.contact_whatsapp}}" target="_blank"><i class="hb-ico whatsapp-c-ico"></i></a></li>
+                    <li wb-if="'{{_var.contact_telegram}}'>''"><a href="{{_var.contact_telegram}}" target="_blank"><i class="hb-ico telegram-c-ico"></i></a></li>
+                    <li wb-if="'{{_var.contact_vk}}'>''"><a href="{{_var.contact_vk}}" target="_blank"><i class="hb-ico vk-c-ico"></i></a></li>
+                    <li wb-if="'{{_var.contact_ok}}'>''"><a href="{{_var.contact_ok}}" target="_blank"><i class="hb-ico ok-c-ico"></i></a></li>
                 </ul>
                 <ul class="header-actions">
                     <li><a href="mailto:{{_var.contact_email}}"><span class="action-cr"><i class="hb-ico mail-ico"></i></span><span>{{_var.contact_email}}</span></a></li>
@@ -68,7 +68,7 @@
             </div>
         </div>
     </header>
-    
+
     <div class="directory">
         <div class="wrapper">
             <div class="directory-all">
@@ -115,10 +115,10 @@
                 </div>
             </div>
             <ul class="header-social">
-                <li><a href="{{_var.contact_whatsapp}}" target="_blank"><i class="hb-ico whatsapp-c-ico"></i></a></li>
-                <li><a href="{{_var.contact_telegram}}" target="_blank"><i class="hb-ico telegram-c-ico"></i></a></li>
-                <li><a href="{{_var.contact_vk}}" target="_blank"><i class="hb-ico vk-c-ico"></i></a></li>
-                <li><a href="{{_var.contact_ok}}" target="_blank"><i class="hb-ico ok-c-ico"></i></a></li>
+                <li wb-if="'{{_var.contact_whatsapp}}'>''"><a href="{{_var.contact_whatsapp}}" target="_blank"><i class="hb-ico whatsapp-c-ico"></i></a></li>
+                <li wb-if="'{{_var.contact_telegram}}'>''"><a href="{{_var.contact_telegram}}" target="_blank"><i class="hb-ico telegram-c-ico"></i></a></li>
+                <li wb-if="'{{_var.contact_vk}}'>''"><a href="{{_var.contact_vk}}" target="_blank"><i class="hb-ico vk-c-ico"></i></a></li>
+                <li wb-if="'{{_var.contact_ok}}'>''"><a href="{{_var.contact_ok}}" target="_blank"><i class="hb-ico ok-c-ico"></i></a></li>
             </ul>
         </div>
     </div>
