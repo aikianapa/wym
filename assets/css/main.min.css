@@ -8559,20 +8559,24 @@ blockquote {
     left: 33%;
 }
 .direction-name-3{
-    top: 10%;
-    right: 33%;
+    top: 8%;
+    right: 28%;
 }
 .direction-name-4{
-    bottom: 6%;
-    left: 25%;
+    top: 24%;
+    right: 24%;
 }
 .direction-name-5{
+    bottom: 25%;
+    right: 14%;
+}
+.direction-name-6{
     bottom: 13%;
     right: 32%;
 }
-.direction-name-6{
-    bottom: 25%;
-    right: 14%;
+.direction-name-7{
+    bottom: 6%;
+    left: 25%;
 }
 .buy .section-top{
     align-items: flex-start;
@@ -8908,27 +8912,31 @@ blockquote {
 @media only screen and (max-width: 1600px){
     .direction-name-1{
         top: 22%;
-        left: 8%;
+        left: 5%;
     }
     .direction-name-2{
         top: 10%;
-        left: 28%;
+        left: 33%;
     }
     .direction-name-3{
-        top: 10%;
-        right: 28%;
+        top: 8%;
+        right: 24%;
     }
     .direction-name-4{
-        bottom: 6%;
-        left: 20%;
+        top: 24%;
+        right: 20%;
     }
     .direction-name-5{
-        bottom: 13%;
-        right: 27%;
+        bottom: 25%;
+        right: 10%;
     }
     .direction-name-6{
-        bottom: 25%;
-        right: 9%;
+        bottom: 13%;
+        right: 24%;
+    }
+    .direction-name-7{
+        bottom: 6%;
+        left: 22%;
     }
     .aboutUs-tit{
         max-width: 880px;

@@ -1,11 +1,20 @@
 <view>
+
+    <!-- /api/v2/read/catalogs/directions -->
+
     <div class="wrapper page-top">
         <h1 class="page-title">Медицинские направления</h1>
     </div>
     <div class="wrapper">
+        <wb-var dirs wb-api="/api/v2/read/catalogs/directions" />
         <div class="direction-wrap">
-            <wb-foreach wb="table=catalogs&item=directions&from=tree.data&tpl=false">
+            <wb-foreach wb="from=_var.dirs.tree.data&tpl=false">
                 <span class="direction-name direction-name-{{_ndx}}">{{name}}</span>
+            </wb-foreach>
+
+
+            <wb-foreach wb="from=_var.dirs.tree.data&tpl=false">
+
                 <div class="direction-item-info direction-item-info-{{_ndx}}" id="direction-{{_ndx}}">
                     <i class="hb-ico close-ico"></i>
                     <span class="direction-item-tit">{{name}}</span>
@@ -21,7 +30,7 @@
             </wb-foreach>
             <div class="direction-main"><img src="/assets/img/Illustation.png" alt=""></div>
             <div class="direction-items">
-                <wb-foreach wb="table=catalogs&item=directions&from=tree.data&tpl=false">
+                <wb-foreach wb="from=_var.dirs.tree.data&tpl=false">
                     <div class="direction-item direction-item-{{_ndx}}" wb-if="'{{active}}'=='on'">
                         <div class="direction-item-imgs" data-direction="direction-{{_ndx}}">
                             <div class="direction-item-img-1"><img src="/assets/img/Building_{{_ndx}}/img-1.png" alt=""></div>
@@ -35,7 +44,7 @@
             <div class="direction-mob">
                 <div class="direction-slider slider swiper-container">
                     <div class="swiper-wrapper">
-                        <wb-foreach wb="table=catalogs&item=directions&from=tree.data&tpl=false">
+                        <wb-foreach wb="from=_var.dirs.tree.data&tpl=false">
                             <div class="direction-slide swiper-slide" wb-if="'{{active}}'=='on'">
                                 <span class="direction-slide-tit">{{name}}</span>
                                 <div class="direction-slide-img">
