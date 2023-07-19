@@ -8273,7 +8273,7 @@ blockquote {
 }
 
 .tab.tab-1 .about-img-main-img-13 img {
-    max-width: 102px
+    max-width: 109px
 }
 
 .tab.tab-1 .about-img-main-img-14 {
@@ -8920,7 +8920,7 @@ blockquote {
     left: 94px;
     top: 88px;
 }
-.tab.tab-2 .about-img-main-img-13 img{
+.tab.tab-1 .about-img-main-img-13 img{
     max-width: 109px;
 }
 .tab.tab-1 .about-img-main-img-12{
@@ -8971,6 +8971,9 @@ blockquote {
 }
 .tab.tab-3 .about-img-main-img-12 img{
     max-width: 110px;
+}
+.about-clue p{
+    padding: 0;
 }
 @media only screen and (max-width: 1600px){
     .direction-name-1{
