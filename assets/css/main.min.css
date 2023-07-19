@@ -8973,7 +8973,8 @@ blockquote {
     max-width: 110px;
 }
 .about-clue p{
-    padding: 0;
+    padding: 0!important;
+    white-space: pre-line;
 }
 @media only screen and (max-width: 1600px){
     .direction-name-1{
