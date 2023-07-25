@@ -28,13 +28,14 @@ class newsClass extends cmsFormsClass {
     }
 
     function prevnext(&$item) {
-        $news = $this->app->itemList('news',['filter'=>['active'=>'on','type'=>$item['type']], 'sort' => 'date','return'=>'id,header']);
+        $news = $this->app->itemList('news',['filter'=>['active'=>'on','type'=>$item['type']], 'sort' => 'date','return'=>'id,header,active,type,date']);
         $cuid = $item['id'];
         $news=array_values($news['list']);
         foreach($news as $i => &$line) {
             if ($line['id'] == $cuid) {
-                isset($news[$i-1]) ? $prev = $news[$i-1]['header'] : $next = $news[count($news)-1]['header'];
+                isset($news[$i-1]) ? $prev = $news[$i-1]['header'] : $prev = $news[count($news)-1]['header'];
                 isset($news[$i+1]) ? $next = $news[$i+1]['header'] : $next = $news[0]['header'];
+                break;
             } 
         }
         isset($prev) ? null : $prev = $line['header'];

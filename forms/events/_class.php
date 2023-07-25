@@ -30,12 +30,12 @@ class eventsClass extends cmsFormsClass {
     }
 
     function prevnext(&$item) {
-        $events = $this->app->itemList('events',['filter'=>['active'=>'on','type'=>$item['type']], 'sort' => 'date','return'=>'id,header']);
+        $events = $this->app->itemList('events',['filter'=>['active'=>'on','type'=>$item['type']], 'sort' => 'date','return'=> 'id,header,active,type,date']);
         $cuid = $item['id'];
         $events=array_values($events['list']);
         foreach($events as $i => &$line) {
             if ($line['id'] == $cuid) {
-                isset($events[$i-1]) ? $prev = $events[$i-1]['header'] : $next = $events[count($events)-1]['header'];
+                isset($events[$i-1]) ? $prev = $events[$i-1]['header'] : $prev = $events[count($events)-1]['header'];
                 isset($events[$i+1]) ? $next = $events[$i+1]['header'] : $next = $events[0]['header'];
             } 
         }

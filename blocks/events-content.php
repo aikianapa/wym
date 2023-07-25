@@ -3,7 +3,6 @@
         <wb-var type="мероприятие" />
         <div class="wrapper">
             <div class="page-top">
-                <wb-include wb-tpl="breadcrumbs.php" />
                 <h1 class="page-title">{{_parent.header}}</h1>
                 <div class="page-row">
                     <a href="/events" class="news-tag">{{ucfirst({{_var.type}})}}</a>
