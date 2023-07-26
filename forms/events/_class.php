@@ -15,7 +15,7 @@ class eventsClass extends cmsFormsClass {
 
     public function afterItemRead(&$item) {
         if (!$item) return;
-        if (isset($item['blocks'])) {
+        if (isset($item['blocks']) && is_array($item['blocks'])) {
             foreach((array)$item['blocks'] as $block) {
                 if ($block['name'] == 'events-content') {
                     $item['type'] =  @$block['type'];
