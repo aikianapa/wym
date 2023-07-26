@@ -18,7 +18,7 @@ class eventsClass extends cmsFormsClass {
         if (isset($item['blocks'])) {
             foreach((array)$item['blocks'] as $block) {
                 if ($block['name'] == 'events-content') {
-                    $item['type'] =  $block['type'];
+                    $item['type'] = @$block['type'];
                     $item['short'] =  $block['short'];
                     break;
                 }              
