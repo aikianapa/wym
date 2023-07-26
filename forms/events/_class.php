@@ -18,7 +18,7 @@ class eventsClass extends cmsFormsClass {
         if (isset($item['blocks'])) {
             foreach((array)$item['blocks'] as $block) {
                 if ($block['name'] == 'events-content') {
-                    $item['type'] = @$block['type'];
+                    $item['type'] =  @$block['type'];
                     $item['short'] =  $block['short'];
                     break;
                 }              
@@ -30,12 +30,12 @@ class eventsClass extends cmsFormsClass {
     }
 
     function prevnext(&$item) {
-        $events = $this->app->itemList('events',['filter'=>['active'=>'on','type'=>$item['type']], 'sort' => 'date','return'=> 'id,header,active,type,date']);
+        $events = $this->app->itemList('events',['filter'=>['active'=>'on','type'=>$item['type']], 'sort' => 'date','return'=>'id,header']);
         $cuid = $item['id'];
         $events=array_values($events['list']);
         foreach($events as $i => &$line) {
             if ($line['id'] == $cuid) {
-                isset($events[$i-1]) ? $prev = $events[$i-1]['header'] : $prev = $events[count($events)-1]['header'];
+                isset($events[$i-1]) ? $prev = $events[$i-1]['header'] : $next = $events[count($events)-1]['header'];
                 isset($events[$i+1]) ? $next = $events[$i+1]['header'] : $next = $events[0]['header'];
             } 
         }
