@@ -80,7 +80,9 @@
                                                 <td style="vertical-align:baseline">
                                                     <wb-var codes='{{explode(",",{{list}})}}' />
                                                     <wb-foreach wb="from=_var.codes&tpl=false">
-                                                        <p>{{_val}}</p>
+                                                        <wb-var dfo='{{mb_strpos({{_val}},"-DFO")}}' />
+                                                        <p wb-if="'{{_var.dfo}}'==''">{{_val}}</p>
+                                                        <p wb-if="'{{_var.dfo}}'>''"><b>{{_val}}</b></p>
                                                     </wb-foreach>
                                                 </td>
                                             </wb-foreach>
@@ -188,7 +190,7 @@
             <div class="form-group row">
                 <div class="col-12">
                     <label class="col-form-label">Аннотация</label>
-                    <textarea name="sample" class="form-control" rows="auto"></textarea>
+                    <wb-module wb="module=editor" name="sample" />
                 </div>
             </div>
         </div>
