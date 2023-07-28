@@ -51,14 +51,8 @@ class usersClass extends cmsFormsClass
 
     public function setpass(&$item)
     {
-        if (!isset($item['setpass']) OR $item['setpass'] == '' ) {
-            $item['password'] = wbPasswordMake($this->genpass(6));
-            $this->app->itemSave('users', $item, false);
-            unset($item['setpass']);
-        } else {
-            $item['password'] = wbPasswordMake($item['setpass']);
-        }
         $item['active'] = 'on';
+        $item['password'] = wbPasswordMake($item['setpass']);
         $msg = $this->app->fromString('<html><div class="mail"></div></html>');
         $msg->find('.mail')->prepend('<h3>Доступ к материалам сайта ' . $this->app->route->host . '</h3>');
         $subj = $msg->find('.mail > h3')->text();
@@ -92,7 +86,8 @@ class usersClass extends cmsFormsClass
             'position' => $this->app->vars('_post.position'),
             'subscribe' => $this->app->vars('_post.subscribe'),
             'role' => 'user',
-            'active' => ''
+            'active' => '',
+            'setpass' => $this->genpass(6)
         ];
 
         $user = $this->app->itemSave('users', $user, true);
