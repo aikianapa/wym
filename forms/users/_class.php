@@ -87,14 +87,13 @@ class usersClass extends cmsFormsClass
             'subscribe' => $this->app->vars('_post.subscribe'),
             'role' => 'user',
             'active' => '',
-            'setpass' => $this->genpass(6)
+            'setpass' => $this->genpass(6) // этот параметр включает авторегистрацию
         ];
 
         $user = $this->app->itemSave('users', $user, true);
         if (!$user) {
             return json_encode(['error' => true, 'msg' => 'Ошибка! Пользователь не зарегистрирован. Попробуйте повторить регистрацию чуть позже.']);
         }
-        $this->setpass($user);
         return json_encode(['error' => false, 'msg' => 'Пользователь успешно зарегистрирован. Активация учётной записи произойдёт после проверки нашими специалистами. Пароль доступа прийдёт на указанный адрес электронной почты.']);
     }
 }
