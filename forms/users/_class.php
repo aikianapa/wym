@@ -32,10 +32,33 @@ class usersClass extends cmsFormsClass
         }
     }
 
+    function genpass($len, $full = 1)
+    {
+        $pasw = null;
+        if ($full == 1)
+            $chars = array(
+                "1", "2", "3", "4", "5", "6", "7", "8", "9", "q", "w", "e", "r", "t", "y",
+                "u", "i", "p", "l", "k", "j", "h", "g", "f", "d", "s", "a", "z", "x", "c", "v", "b", "n", "m"
+            );
+        else
+        $chars = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
+        $lchars = count($chars);
+        for ($i = 0; $i < $len; $i++) {
+            $pasw .= $chars[mt_rand(0, ($lchars - 1))];
+        }
+        return $pasw;
+    }
+
     public function setpass(&$item)
     {
+        if (!isset($item['setpass']) OR $item['setpass'] == '' ) {
+            $item['password'] = wbPasswordMake($this->genpass(6));
+            $this->app->itemSave('users', $item, false);
+            unset($item['setpass']);
+        } else {
+            $item['password'] = wbPasswordMake($item['setpass']);
+        }
         $item['active'] = 'on';
-        $item['password'] = wbPasswordMake($item['setpass']);
         $msg = $this->app->fromString('<html><div class="mail"></div></html>');
         $msg->find('.mail')->prepend('<h3>Доступ к материалам сайта ' . $this->app->route->host . '</h3>');
         $subj = $msg->find('.mail > h3')->text();
@@ -76,7 +99,6 @@ class usersClass extends cmsFormsClass
         if (!$user) {
             return json_encode(['error' => true, 'msg' => 'Ошибка! Пользователь не зарегистрирован. Попробуйте повторить регистрацию чуть позже.']);
         }
-        $this->setpass($user);
         return json_encode(['error' => false, 'msg' => 'Пользователь успешно зарегистрирован. Активация учётной записи произойдёт после проверки нашими специалистами. Пароль доступа прийдёт на указанный адрес электронной почты.']);
     }
 }
