@@ -9,7 +9,7 @@
         <wb-var dirs wb-api="/api/v2/read/catalogs/directions" />
         <div class="direction-wrap">
             <wb-foreach wb="from=_var.dirs.tree.data&tpl=false">
-                <span class="direction-name direction-name-{{_ndx}}">{{name}}</span>
+                <span wb-if="'{{active}}'=='on'" class="direction-name direction-name-{{_ndx}}">{{name}}</span>
             </wb-foreach>
 
 
