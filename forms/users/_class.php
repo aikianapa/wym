@@ -63,7 +63,10 @@ class usersClass extends cmsFormsClass
             С наилучшими пожеланиями, Woo Young Mediacal
         ");
         $from = $this->app->vars('_sett.email') . ';' . 'Woo Young Mediacal';
-        $sent = $item['email'] . ';' . $item['fullname'];
+        $sent = [
+            $item['email'] . ';' . $item['fullname'],
+            $this->app->vars('_sett.quotes_email') . ';Wym',
+        ];
         $res = $this->app->mail($from, $sent, $subj, $msg->html());
         unset($item['setpass']);
     }
