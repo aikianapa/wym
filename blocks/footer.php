@@ -23,7 +23,7 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <div class="footer-tel"><a href="tel:{{text2tel({{_var.contact_phone}})}}">{{superTel({{_var.contact_phone}})}}</b></a></div>
+                        <div class="footer-tel"><a href="tel:+{{text2tel({{_var.contact_phone}})}}">{{superTel({{_var.contact_phone}})}}</b></a></div>
                         <div class="footer-mail"><a href="mailto:{{_var.contact_email}}">{{_var.contact_email}}</a></div>
                         <p>{{_var.contact_address}}</p>
                         <p>{{_var.contact_worktime}}</p>

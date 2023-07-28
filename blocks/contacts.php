@@ -7,7 +7,7 @@
             <div class="contacts-row">
                 <div class="contacts-info">
                     <ul class="header-actions">
-                        <li><a href="tel:{{text2tel({{_var.contact_phone}})}}"><span class="action-cr"><i class="hb-ico tel-ico"></i></span><span>{{superTel({{_var.contact_phone}})}}</b></span></a></li>
+                        <li><a href="tel:+{{text2tel({{_var.contact_phone}})}}"><span class="action-cr"><i class="hb-ico tel-ico"></i></span><span>{{superTel({{_var.contact_phone}})}}</b></span></a></li>
                         <li><a href="mailto:{{_var.contact.email}}"><span class="action-cr"><i class="hb-ico mail-ico"></i></span><span>{{_var.contact_email}}</span></a></li>
                         <li><span class="action-cr"><i class="hb-ico located-ico"></i></span><span>{{_var.contact_address}}</span></li>
                         <li><span class="action-cr"><i class="hb-ico time-ico"></i></span><span>{{_var.contact_worktime}}</span></li>

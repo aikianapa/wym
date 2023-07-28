@@ -36,7 +36,7 @@
                 </ul>
                 <ul class="header-actions">
                     <li><a href="mailto:{{_var.contact_email}}"><span class="action-cr"><i class="hb-ico mail-ico"></i></span><span>{{_var.contact_email}}</span></a></li>
-                    <li><a href="tel:{{text2tel({{_var.contact_phone}})}}"><span class="action-cr"><i class="hb-ico tel-ico"></i></span><span>{{superTel({{_var.contact_phone}})}}</span></a></li>
+                    <li><a href="tel:+{{text2tel({{_var.contact_phone}})}}"><span class="action-cr"><i class="hb-ico tel-ico"></i></span><span>{{superTel({{_var.contact_phone}})}}</span></a></li>
                 </ul>
             </div>
             <wb-var menu="{{yongerSiteMenu()}}" />
