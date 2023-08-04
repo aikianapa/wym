@@ -55,7 +55,7 @@
                 <div class="event-content">
                     <wb-var hide="event-text" wb-if="'{{_sess.user.role}}'==''" else="" />
                     <div class="{{_var.hide}}">
-                        <div class="event-block">
+                        <div class="event-block" itemprop="description">
                             {{text}}
                         </div>
                     </div>
