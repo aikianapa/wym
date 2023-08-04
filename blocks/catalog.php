@@ -8,21 +8,21 @@
             <div class="catalog-row">
                 <wb-include wb-tpl="catalog-sidebar.php" wb-if="'{{_route.direction}}'==''" />
                 <div class="catalog-content" wb-if="'{{_route.direction}}'==''">
-                    <div class="products-row">
+                    <div class="products-row" itemscope itemtype="https://schema.org/ItemList">
                         <wb-var filter="speed=[{{_route.speed}}]" wb-if="'{{_route.speed}}'>''" else="speed=[per]" />
                         <wb-var filter="directions=[{{_route.direction}}]" wb-if="'{{_route.direction}}'>''" />
                         <wb-foreach wb="from=_var.products&tpl=false" wb-filter="{{_var.filter}}">
-                            <div class="product">
+                            <div class="product" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
                                 <div class="product-wrap">
                                     <wb-var sp="{{speed.0}}" wb-if="'{{_route.speed}}'==''" else="{{_route.speed}}" />
                                     <div class="product-speed speed-{{_var.speed.{{_var.sp}}.data.color}}">
                                         <span>{{_var.speed.{{_var.sp}}.name}}</span>
                                     </div>
-                                    <a href="{{link}}" class="product-img"><img src="/thumbc/210x196/src{{cover.0.img}}" alt=""></a>
+                                    <a href="{{link}}" class="product-img"><img itemprop="image" src="/thumbc/210x196/src{{cover.0.img}}" alt=""></a>
                                     <div class="product-info">
                                         <span class="product-name"><a href="{{link}}">{{header}}</a></span>
                                         <p>{{short}}</p>
-                                        <a href="{{link}}" class="more-btn">Подробнее</a>
+                                        <a href="{{link}}" itemprop="url" class="more-btn">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
