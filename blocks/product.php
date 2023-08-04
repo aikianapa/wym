@@ -4,14 +4,14 @@
             <div class="page-top">
                 <h1 class="page-title">Каталог продуктов</h1>
             </div>
-            <div class="catalog-row">
+            <div class="catalog-row" itemscope itemtype="https://schema.org/Product">
                 <wb-include wb-tpl="catalog-sidebar.php" />
                 <div class="catalog-content">
                     <div class="card-top">
-                        <div class="card-img"><img src="/thumbc/600x600/src{{_parent.cover.0.img}}" alt=""></div>
+                        <div class="card-img"><img itemprop="image" src="/thumbc/600x600/src{{_parent.cover.0.img}}" alt=""></div>
                         <div class="card-info">
-                            <h2 class="card-title" wb-if="'{{title}}'>''">{{title}}</h2>
-                            <p class="text-break">{{text}}</p>
+                            <h2 class="card-title" itemprop="name" wb-if="'{{title}}'>''">{{title}}</h2>
+                            <p class="text-break" itemprop="description">{{text}}</p>
 
 
 
