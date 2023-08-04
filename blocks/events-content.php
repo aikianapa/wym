@@ -1,12 +1,12 @@
 <view>
     <section class="page event">
         <wb-var type="мероприятие" />
-        <div class="wrapper">
+        <div class="wrapper" itemscope itemtype="https://schema.org/Article">
             <div class="page-top">
-                <h1 class="page-title">{{_parent.header}}</h1>
+                <h1 class="page-title" itemprop="name">{{_parent.header}}</h1>
                 <div class="page-row">
                     <a href="/events" class="news-tag">{{ucfirst({{_var.type}})}}</a>
-                    <span class="page-date"><i class="hb-ico date-ico"></i>{{datetext({{_parent.date}})}}</span>
+                    <span class="page-date" itemprop="datePublished"><i class="hb-ico date-ico"></i>{{datetext({{_parent.date}})}}</span>
                 </div>
             </div>
             <div class="event-all">
@@ -23,7 +23,7 @@
                         <wb-include wb-tpl="contact-block.php" />
                     </div>
                     <div class="event-content">
-                        <div class="event-block">
+                        <div class="event-block" itemprop="description">
                             {{text}}
                         </div>
                         <div class="event-bottom">
