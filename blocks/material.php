@@ -1,11 +1,11 @@
 <view>
     <section class="event">
-        <div class="wrapper">
+        <div class="wrapper" itemscope itemtype="https://schema.org/Article">
             <div class="page-top">
-                <h1 class="page-title">{{_parent.header}}</h1>
+                <h1 class="page-title" itemprop="name">{{_parent.header}}</h1>
                 <div class="page-row">
                     <a href="{{_route.url}}" class="news-tag">{{_parent.tag}}</a>
-                    <span class="page-date"><i class="hb-ico date-ico"></i>{{datetext({{_parent.date}})}}</span>
+                    <span class="page-date" itemprop="datePublished"><i class="hb-ico date-ico"></i>{{datetext({{_parent.date}})}}</span>
                 </div>
                 <wb-include wb-tpl="allow-message.php" />
             </div>
