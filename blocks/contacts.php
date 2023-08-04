@@ -4,12 +4,15 @@
             <div class="page-top">
                 <h1 class="page-title">Контакты</h1>
             </div>
-            <div class="contacts-row">
+            <div class="contacts-row" itemscope itemtype="https://schema.org/Organization">
                 <div class="contacts-info">
                     <ul class="header-actions">
-                        <li><a href="tel:+{{text2tel({{_var.contact_phone}})}}"><span class="action-cr"><i class="hb-ico tel-ico"></i></span><span>{{superTel({{_var.contact_phone}})}}</b></span></a></li>
-                        <li><a href="mailto:{{_var.contact.email}}"><span class="action-cr"><i class="hb-ico mail-ico"></i></span><span>{{_var.contact_email}}</span></a></li>
-                        <li><span class="action-cr"><i class="hb-ico located-ico"></i></span><span>{{_var.contact_address}}</span></li>
+                        <li><span itemprop="name">{{_sett.header}}</span></li>
+                        <li><a href="tel:+{{text2tel({{_var.contact_phone}})}}"><span class="action-cr"><i class="hb-ico tel-ico"></i></span><span itemprop="telephone">{{superTel({{_var.contact_phone}})}}</b></span></a></li>
+                        <li><a href="mailto:{{_var.contact.email}}"><span class="action-cr"><i class="hb-ico mail-ico"></i></span><span itemprop="faxNumber">{{_var.contact_email}}</span></a></li>
+                        <li itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                            <span class="action-cr"><i class="hb-ico located-ico"></i></span><span itemprop="streetAddress">{{_var.contact_address}}</span>
+                        </li>
                         <li><span class="action-cr"><i class="hb-ico time-ico"></i></span><span>{{_var.contact_worktime}}</span></li>
                     </ul>
                     <span class="contacts-title">Реквизиты</span>
