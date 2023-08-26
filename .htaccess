@@ -65,6 +65,38 @@ RewriteBase /
 Options +FollowSymLinks
 RewriteEngine On
 
+
+RewriteRule ^production/accufuser-continuous.html$ /catalog/accufuser-continuous [L,R=301]
+RewriteRule ^production/accufuser-ctx.html$ /catalog/accufuser-ctx [L,R=301]
+RewriteRule ^production/accufuser-varicon.html$ /catalog/accufuser-m16c [L,R=301]
+RewriteRule ^production.html$ /catalog [L,R=301]
+RewriteRule ^production/instrukcii/instrukciya-po-zapolneniyu-mikroinfuzionnyh-pomp-mip.html$ /catalog/accufuser-m8c [L,R=301]
+RewriteRule ^production/novyj-resurs/sistemy-infuzionnye-s-reguljatorom.html$ /catalog/accufuser-omnibus [L,R=301]
+RewriteRule ^production/novyj-resurs/sistemy-infuzionnye-s-bolusom.html$ /catalog/speed/kpa [L,R=301]
+RewriteRule ^contacts.html$ /contacts [L,R=301]
+RewriteRule ^news/port-sistemy-myport.html$ / [L,R=301]
+RewriteRule ^production/accufuser-plus.html$ /catalog/accufuser-easy-bolus-plus [L,R=301]
+RewriteRule ^about.html$ /about [L,R=301]
+RewriteRule ^production/accufuser-omnibus.html$ /catalog/accufuser-omnibus [L,R=301]
+RewriteRule ^production/accufuser-abx.html$ /catalog/accufuser-abx [L,R=301]
+RewriteRule ^news/duplicate-of-xiii-vserossijskaya-nauchno-metodicheskaya-konferenciya.html$ /news [L,R=301]
+RewriteRule ^news/bezopasnost-farmakoterapii-vozmozhnosti-elastomernyh-pomp.html$ /materials/bezopasnost-farmakoterapii-chto-novogo [L,R=301]
+RewriteRule ^news/tretij-mezhregionalnyj-forum-rukovoditelej-lpu-onkologicheskogo-profilja.html$ /news [L,R=301]
+RewriteRule ^why.html$ /directions [L,R=301]
+RewriteRule ^partners.html$ /partners [L,R=301]
+RewriteRule ^buy.html$ /wherebuy [L,R=301]
+RewriteRule ^news/xv-sezd-federacii-anesteziologov-i-reanimatologov.html$ /news/itogi-uchastiya-v-iv-s-ezde-federacii-anesteziologov-i-reanimatologov [L,R=301]
+RewriteRule ^production/novyj-resurs/pompa-mikroinfuzionnaya-accufuser-wym-koreya.html$ https://vimeo.com/368431081 [L,R=301]
+RewriteRule ^production/accufuser-selectus.html$ /catalog [L,R=301]
+RewriteRule ^kupit-regulyator-infuzii/$ /wherebuy [L,R=301]
+RewriteRule ^infuzomat-250-sm/$ /catalog/ambulatornaya-infuzionnaya-pompa-akkumat [L,R=301]
+RewriteRule ^woo-young/$ /about/team [L,R=301]
+RewriteRule ^variconn-instrukciya/$ /catalog/speed/kpa [L,R=301]
+RewriteRule ^news/konferenciya-regionarnaya-anesteziya-i-perioperacionnoe-obezbolivanie-vchera-segodnya-zavtra-g.-arhangelsk.html$ /news [L,R=301]
+RewriteRule ^publics/vnedrenie-programmiruemoj-intervalnoj-epiduralnoj-anestezii-s-bolyusom-dlya-obezbolivaniya-rodov1.html$ /news [L,R=301]
+RewriteRule ^sfera-primeneniya.html$ /directions [L,R=301]
+RewriteRule ^news/zdravoohranenie-belarusi-2018.html$ /news [L,R=301]
+
 RewriteRule ^(.*)\.less$ index.php 
 RewriteRule ^(.*)\.scss$ index.php 
 

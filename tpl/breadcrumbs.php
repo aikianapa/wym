@@ -15,13 +15,15 @@
         <meta itemprop="position" content="1" />
     </li>
     <wb-foreach wb="from=_var.midcrumb&tpl=false">
-        <li wb-if="'{{path}}' > ''" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="{{path}}">
+        <wb-var path="{{path}}" wb-if="'{{path}}'!=='/events'" else="/news" />
+
+        <li wb-if="'{{_var.path}}' > ''" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="{{_var.path}}">
                 <span itemprop="name">{{header}}</span>
             </a>
             <meta itemprop="position" content="{{1 + _ndx}}" />
         </li>
-        <li wb-if="'{{path}}' == ''" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <li wb-if="'{{_var.path}}' == ''" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
             <span itemprop="name">{{header}}</span>
             <meta itemprop="position" content="{{1 + _ndx}}" />
         </li>

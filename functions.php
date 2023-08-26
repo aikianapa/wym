@@ -68,7 +68,7 @@ function dirspd($spd) {
     $directions = [];
     // Возвращает список направлений по указанной скорости 
     $host = $app->vars('_route.host');
-    $list = file_get_contents($host. "/api/v2/list/products?active=on&speed=[{$spd}]&@return=directions");
+    $list = file_get_contents($host. "/api/v2/list/products?active=on&speed=[{$spd}]&@'.'return=directions");
     $list = json_decode($list,true);
     foreach(@(array)$list as $item) {
         foreach(@(array)$item['directions'] as $dir) {

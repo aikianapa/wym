@@ -20,7 +20,7 @@
                             <div class="buy-slide swiper-slide">
                                 <div class="buy-wrap">
                                     <div class="buy-logo">
-                                        <a href="{{wblink}}" target="_blank"><img src="/thumbc/src{{image.0.img}}" alt="{{whname}}"></a>
+                                        <a href="{{whlink}}" rel="nofollow" target="_blank"><img src="/thumbc/src{{image.0.img}}" alt="{{whname}}"></a>
                                     </div>
                                     <span class="buy-name" wb-if="'{{whname}}'>''">{{whname}}</span>
                                     <span class="buy-txt" wb-if="'{{whaddr}}'>''">{{whaddr}}</span>
