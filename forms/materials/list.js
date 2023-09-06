@@ -43,6 +43,16 @@
                     if (res.active !== undefined) ev.set('active', res.active)
                 })
             },
+            switchHome(ev) {
+                let id = $(ev.node).parents('[data-id]').attr('data-id');
+                let home = '';
+                ev.get('home') == 'on' ? home = '' : home = 'on';
+                wbapp.post(`/api/v2/update/${form}/` + id, {
+                    home: home
+                }, function (res) {
+                    if (res.home !== undefined) ev.set('home', res.home)
+                })
+            },
             filter(ev) {
                 let base = this.get("base");
                 let filter = {}

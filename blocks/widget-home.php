@@ -7,32 +7,24 @@
                         <h2 class="section-title">Научные материалы</h2>
                         <div class="section-link"><a href="[materials]">Перейти в научные материалы</a></div>
                     </div>
-                    <wb-var materials wb-api="/api/v2/list/materials?active=on&@sort=date:d" />
+                    <wb-var materials wb-api="/api/v2/list/materials?active=on&home=on&@sort=date:d" />
                     <div class=" materials-row">
-                        <div class="materials-col">
-                            <wb-foreach wb="from=_var.materials&tpl=false&limit=2" wb-filter="materials!=video">
-                                <div class="materials-card">
-                                    <a href="{{link}}" class="materials-img">
-                                        <span class="materials-img-wrap" style="background-image: url(/thumbc/780x230/src{{cover[0].img}});"></span>
-                                    </a>
-                                    <a href="{{link}}" class="materials-tag">{{tag}}</a>
-                                    <span class="materials-name"><a href="{{link}}">{{header}}</a></span>
-                                    <p><a href="#">{{descr}}</a></p>
-                                </div>
-                            </wb-foreach>
+                        <div class="materials-col-2">
+                            <div class="materials-grid">
+                                <wb-foreach wb="from=_var.materials&tpl=false&limit=12">
+                                    <div class="materials-grid-item">
+                                        <div class="materials-card">
+                                            <a href="{{link}}" class="materials-img">
+                                                <span class="materials-img-wrap" style="background-image: url(/thumbc/780x230/src{{cover[0].img}});"></span>
+                                            </a>
+                                            <a href="{{link}}" class="materials-tag">{{tag}}</a>
+                                            <span class="materials-name"><a href="{{link}}">{{header}}</a></span>
+                                            <p><a href="#">{{descr}}</a></p>
+                                        </div>
+                                    </div>
+                                </wb-foreach>
+                            </div>
                         </div>
-                        <!-- col -->
-                        <div class="materials-col">
-                            <wb-foreach wb="from=_var.materials&tpl=false&limit=2" wb-filter="materials=video">
-                                <div class="materials-card">
-                                    <a href="{{link}}" class="materials-img materials-video"><span class="materials-img-wrap" style="background-image: url(/thumbc/370x160/src{{cover[0].img}});"></span></a>
-                                    <a href="{{link}}" class="materials-tag">{{tag}}</a>
-                                    <span class="materials-name"><a href="{{link}}">{{header}}</a></span>
-                                    <p><a href="{{link}}">{{descr}}</a></p>
-                                </div>
-                            </wb-foreach>
-                        </div>
-                        <!-- col -->
                     </div>
                 </div>
                 <div class="materials-sidebar">
@@ -49,7 +41,7 @@
                                 </a>
                                 <div class="materials-item">
                                     <div class="materials-item-data">
-                                        <wb-var date='{{explode(" ",datetext({{date}}))}}'/>
+                                        <wb-var date='{{explode(" ",datetext({{date}}))}}' />
                                         {{_var.date.0}}<span>{{_var.date.1}}</span>
                                     </div>
                                     <span class="materials-item-name"><a href="{{link}}">{{header}}</a></span>

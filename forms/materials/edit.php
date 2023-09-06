@@ -21,10 +21,7 @@
                                 <div class="form-group row">
                                     <div class="col-12">
                                         <div class="my-0 divider-text">Обложка</div>
-                                        <wb-module wb="module=filepicker&mode=single&original=false&width=800&height=300" 
-                                        wb-path="/uploads/materials/{{_var.id}}" 
-                                        wb-ext="jpg,jpeg,gif,png,webp,svg"
-                                        name="cover">
+                                        <wb-module wb="module=filepicker&mode=single&original=false&width=800&height=300" wb-path="/uploads/materials/{{_var.id}}" wb-ext="jpg,jpeg,gif,png,webp,svg" name="cover">
                                         </wb-module>
                                     </div>
                                 </div>
@@ -37,10 +34,15 @@
                                     </div>
                                 </div>
                                 <div class="mb-1 form-group row">
-
                                     <label class="col-form-label col-md-4">Дата</label>
                                     <div class="col-md-8">
                                         <input type="datepicker" name="date" class="form-control" wb="module=datetimepicker" required>
+                                    </div>
+                                </div>
+                                <div class="mb-1 form-group row">
+                                    <label class="col-form-label col-md-4">На главной</label>
+                                    <div class="col-md-8">
+                                        <input wb="module=switch" name="home" >
                                     </div>
                                 </div>
                                 <div class="mb-1 form-group row">

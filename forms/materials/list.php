@@ -2,22 +2,22 @@
 <div id="yongerSpace">
     <div id="{{_form}}List">
         <nav class="nav navbar navbar-expand-md col">
-            <h3 class="tx-bold tx-spacing--2 order-1">Научные материалы</h3>
+            <h3 class="order-1 tx-bold tx-spacing--2">Научные материалы</h3>
 
-            <a href="#" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'modals'}" class="ml-auto order-2 float-right btn btn-primary">
+            <a href="#" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'modals'}" class="order-2 float-right ml-auto btn btn-primary">
                 <img src="/module/myicons/24/FFFFFF/users-15.svg" /> Добавить материал
             </a>
         </nav>
-        <div class="yonger-nested m-2 p-2">
-            <div class="bg-light p-3 mb-2 rounded search">
+        <div class="p-2 m-2 yonger-nested">
+            <div class="p-3 mb-2 rounded bg-light search">
                 <div class="row">
                     <div class="col-6">
                         <input type="search" class="form-control" name="filter" placeholder="Поиск" on-change="filter">
                     </div>
                     <div class="col-6">
-                        <select class="form-control" name="series" wb-select2 placeholder="Серия" on-change="filter">
+                        <select class="form-control" name="type" wb-select2 placeholder="Серия" on-change="filter">
                             <option value="*">Все</option>
-                            <wb-foreach wb="table=catalogs&item=series&from=tree.data&tpl=false">
+                            <wb-foreach wb="table=catalogs&item=materials&from=tree.data&tpl=false">
                                 <option value="{{id}}" wb-if="'{{active}}'=='on'">{{name}}</option>
                             </wb-foreach>
                         </select>
@@ -28,9 +28,21 @@
             <ul class="list-group">
                 {{#each result}}
                     <li class="list-group-item d-flex align-items-center" data-id="{{.id}}">
-                        <div class="wd-40p">{{.header}}</div>
-                        <div class="wd-30p tx-11">{{.phone}}<br>{{.email}}</div>
-                        <div class="wd-10p">{{.role}}</div>
+                        <div class="wd-60p">{{.header}}</div>
+                        <div class="text-center wd-20p">
+                            <div class="custom-control custom-switch d-inline">
+                                {{#if .home == "on"}}
+                                    <span class="cursor-pointer d-inline" on-click="switchHome">
+                                        <svg class="mi mi-home-house-big" size="24" stroke="82C43C" wb-on wb-module="myicons"></svg>
+                                    </span>
+                                {{/if}}
+                                {{#if .home !== "on"}}
+                                    <span class="cursor-pointer d-inline" on-click="switchHome">
+                                        <svg class="mi mi-home-house-big" size="24" stroke="FC5A5A" wb-on wb-module="myicons"></svg>
+                                    </span>
+                                {{/if}}
+                            </div>
+                        </div>
                         <div class="text-right wd-20p">
                             <div class="custom-control custom-switch d-inline">
                                 {{#if .active == "on"}}
